@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:russian_declinator/configs/app_themes.dart';
+import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/generated/l10n.dart';
-import 'package:russian_declinator/services/settings_database/i_settings_database.dart';
-import 'package:russian_declinator/services/settings_database/settings_database.dart';
 import 'package:russian_declinator/widgets/home_screen/home_screen.dart';
 
-class MyApp extends StatefulWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends ConsumerState<MyApp> {
   late Future<bool> _initAppFuture;
 
   @override
@@ -24,8 +24,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<bool> _initApp() async {
-    final ISettingsDatabase settingsDatabase = SettingsDatabase();
-    await settingsDatabase.initialize();
+    DIContainer.initialize(ref);
+
+    await DIContainer.settingsDatabase.initialize();
 
     return true;
   }
