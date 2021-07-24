@@ -23,7 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage(
             "[Rüüüssiiaan Deecliinaatöör]"),
-        "helloWorld":
-            MessageLookupByLibrary.simpleMessage("[Heeeellöö Wöörld!]")
+        "homeScreenBottomBarHomeLabel":
+            MessageLookupByLibrary.simpleMessage("[Höömee]"),
+        "homeScreenBottomBarSettingsLabel":
+            MessageLookupByLibrary.simpleMessage("[Seeeettiings]")
       };
 }

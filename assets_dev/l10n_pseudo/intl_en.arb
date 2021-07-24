@@ -4,8 +4,12 @@
   "@appName": {
     "description": "Name of the app"
   },
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "test"
+  "homeScreenBottomBarHomeLabel": "Home",
+  "@homeScreenBottomBarHomeLabel": {
+    "description": "A label for the home bottom nav item"
+  },
+  "homeScreenBottomBarSettingsLabel": "Settings",
+  "@homeScreenBottomBarSettingsLabel": {
+    "description": "A label for the settings bottom nav item"
   }
 }

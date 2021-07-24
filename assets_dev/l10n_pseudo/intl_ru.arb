@@ -1,11 +1,15 @@
 {
   "@@locale": "ru",
-  "appName": "[Яцццззииaaп Дееслиипaaтооя]",
+  "appName": "[Яцццззииaaп Деёслиипaaтооя]",
   "@appName": {
     "description": "Name of the app"
   },
-  "helloWorld": "[Нэёэеллоо Щооялд!]",
-  "@helloWorld": {
-    "description": "test"
+  "homeScreenBottomBarHomeLabel": "[Ноомеё]",
+  "@homeScreenBottomBarHomeLabel": {
+    "description": "A label for the home bottom nav item"
+  },
+  "homeScreenBottomBarSettingsLabel": "[Зэёэёттиипгз]",
+  "@homeScreenBottomBarSettingsLabel": {
+    "description": "A label for the settings bottom nav item"
   }
 }
