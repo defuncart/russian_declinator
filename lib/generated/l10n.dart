@@ -80,6 +80,26 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Dark Mode`
+  String get settingsTabDarkModeLabel {
+    return Intl.message(
+      'Dark Mode',
+      name: 'settingsTabDarkModeLabel',
+      desc: 'A label for dark mode setting',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get settingsTabLanguageLabel {
+    return Intl.message(
+      'Language',
+      name: 'settingsTabLanguageLabel',
+      desc: 'A label for language setting',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

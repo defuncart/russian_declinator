@@ -11,5 +11,13 @@
   "homeScreenBottomBarSettingsLabel": "[Seeeettiings]",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
+  },
+  "settingsTabDarkModeLabel": "[Daaaark Möödee]",
+  "@settingsTabDarkModeLabel": {
+    "description": "A label for dark mode setting"
+  },
+  "settingsTabLanguageLabel": "[Laangüüaagee]",
+  "@settingsTabLanguageLabel": {
+    "description": "A label for language setting"
   }
 }
