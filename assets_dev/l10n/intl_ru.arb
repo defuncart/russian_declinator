@@ -1,0 +1,11 @@
+{
+  "@@locale": "ru",
+  "appName": "Русский склонитель",
+  "@appName": {
+    "description": "Name of the app"
+  },
+  "helloWorld": "Привет мир!",
+  "@helloWorld": {
+    "description": "test"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "@@locale": "de",
+  "appName": "Russisch Deklinator",
+  "@appName": {
+    "description": "Name of the app"
+  },
+  "helloWorld": "Hallo Welt!",
+  "@helloWorld": {
+    "description": "test"
+  }
+}
