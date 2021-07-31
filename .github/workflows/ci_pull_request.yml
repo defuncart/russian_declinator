@@ -14,6 +14,10 @@ jobs:
           channel: 'stable'
       - name: Install packages
         run: flutter pub get
+      - name: Generate db
+        run: |
+          dart bin/db/download_dev_assets.dart
+          dart bin/db/create_db.dart
       - name: Lint
         run: flutter analyze
       - name: Unit tests
@@ -31,6 +35,12 @@ jobs:
           channel: 'stable'
       - name: Enable macOS Support
         run: flutter config --enable-macos-desktop
+      - name: Install packages
+        run: flutter pub get
+      - name: Generate db
+        run: |
+          dart bin/db/download_dev_assets.dart
+          dart bin/db/create_db.dart
       - name: Build app
         run: flutter build macos --release
   build-iOS:
@@ -44,6 +54,12 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Install packages
+        run: flutter pub get
+      - name: Generate db
+        run: |
+          dart bin/db/download_dev_assets.dart
+          dart bin/db/create_db.dart
       - name: Build app
         run: flutter build ios --release --no-codesign
   build-Android:
@@ -57,6 +73,12 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Install packages
+        run: flutter pub get
+      - name: Generate db
+        run: |
+          dart bin/db/download_dev_assets.dart
+          dart bin/db/create_db.dart
       - name: Build app
         run: flutter build appbundle --release
   build-Web:
@@ -70,5 +92,11 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Install packages
+        run: flutter pub get
+      - name: Generate db
+        run: |
+          dart bin/db/download_dev_assets.dart
+          dart bin/db/create_db.dart
       - name: Build app
         run: flutter build web --release

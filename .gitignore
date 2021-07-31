@@ -44,3 +44,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ignore local dev assets
+assets_dev/_db
+assets_dev/db
+
+# ignore local assets
+assets/db/
+
+# ignore web specific assets
+web/sql-wasm.js
+web/sql-wasm.wasm
