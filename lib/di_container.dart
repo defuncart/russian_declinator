@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:russian_declinator/services/databases/create_database.dart';
 import 'package:russian_declinator/services/databases/database.dart';
 import 'package:russian_declinator/services/settings_database/i_settings_database.dart';
 import 'package:russian_declinator/services/settings_database/settings_database.dart';
@@ -22,7 +23,7 @@ final _settingsProvider = Provider<ISettingsDatabase>(
 );
 
 final _dbProvider = Provider<Database>(
-  (_) => Database(),
+  (_) => createDatabase(),
 );
 
 final isDarkModeProvider = StateProvider((ref) => DIContainer.settingsDatabase.isDarkMode);
