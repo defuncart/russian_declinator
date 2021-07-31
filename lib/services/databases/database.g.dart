@@ -12,8 +12,10 @@ class Noun extends DataClass implements Insertable<Noun> {
   final String bare;
   final String accented;
   final Gender gender;
-  final bool animate;
-  final bool indeclinable;
+  final bool isAnimate;
+  final bool isIndeclinable;
+  final bool isSingular;
+  final bool isPlural;
   final String sgNom;
   final String sgGen;
   final String sgDat;
@@ -31,8 +33,10 @@ class Noun extends DataClass implements Insertable<Noun> {
       required this.bare,
       required this.accented,
       required this.gender,
-      required this.animate,
-      required this.indeclinable,
+      required this.isAnimate,
+      required this.isIndeclinable,
+      required this.isSingular,
+      required this.isPlural,
       required this.sgNom,
       required this.sgGen,
       required this.sgDat,
@@ -57,10 +61,14 @@ class Noun extends DataClass implements Insertable<Noun> {
           .mapFromDatabaseResponse(data['${effectivePrefix}accented'])!,
       gender: $NounsTable.$converter0.mapToDart(const IntType()
           .mapFromDatabaseResponse(data['${effectivePrefix}gender']))!,
-      animate: const BoolType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}animate'])!,
-      indeclinable: const BoolType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}indeclinable'])!,
+      isAnimate: const BoolType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}is_animate'])!,
+      isIndeclinable: const BoolType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}is_indeclinable'])!,
+      isSingular: const BoolType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}is_singular'])!,
+      isPlural: const BoolType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}is_plural'])!,
       sgNom: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}sg_nom'])!,
       sgGen: const StringType()
@@ -97,8 +105,10 @@ class Noun extends DataClass implements Insertable<Noun> {
       final converter = $NounsTable.$converter0;
       map['gender'] = Variable<int>(converter.mapToSql(gender)!);
     }
-    map['animate'] = Variable<bool>(animate);
-    map['indeclinable'] = Variable<bool>(indeclinable);
+    map['is_animate'] = Variable<bool>(isAnimate);
+    map['is_indeclinable'] = Variable<bool>(isIndeclinable);
+    map['is_singular'] = Variable<bool>(isSingular);
+    map['is_plural'] = Variable<bool>(isPlural);
     map['sg_nom'] = Variable<String>(sgNom);
     map['sg_gen'] = Variable<String>(sgGen);
     map['sg_dat'] = Variable<String>(sgDat);
@@ -120,8 +130,10 @@ class Noun extends DataClass implements Insertable<Noun> {
       bare: Value(bare),
       accented: Value(accented),
       gender: Value(gender),
-      animate: Value(animate),
-      indeclinable: Value(indeclinable),
+      isAnimate: Value(isAnimate),
+      isIndeclinable: Value(isIndeclinable),
+      isSingular: Value(isSingular),
+      isPlural: Value(isPlural),
       sgNom: Value(sgNom),
       sgGen: Value(sgGen),
       sgDat: Value(sgDat),
@@ -145,8 +157,10 @@ class Noun extends DataClass implements Insertable<Noun> {
       bare: serializer.fromJson<String>(json['bare']),
       accented: serializer.fromJson<String>(json['accented']),
       gender: serializer.fromJson<Gender>(json['gender']),
-      animate: serializer.fromJson<bool>(json['animate']),
-      indeclinable: serializer.fromJson<bool>(json['indeclinable']),
+      isAnimate: serializer.fromJson<bool>(json['isAnimate']),
+      isIndeclinable: serializer.fromJson<bool>(json['isIndeclinable']),
+      isSingular: serializer.fromJson<bool>(json['isSingular']),
+      isPlural: serializer.fromJson<bool>(json['isPlural']),
       sgNom: serializer.fromJson<String>(json['sgNom']),
       sgGen: serializer.fromJson<String>(json['sgGen']),
       sgDat: serializer.fromJson<String>(json['sgDat']),
@@ -169,8 +183,10 @@ class Noun extends DataClass implements Insertable<Noun> {
       'bare': serializer.toJson<String>(bare),
       'accented': serializer.toJson<String>(accented),
       'gender': serializer.toJson<Gender>(gender),
-      'animate': serializer.toJson<bool>(animate),
-      'indeclinable': serializer.toJson<bool>(indeclinable),
+      'isAnimate': serializer.toJson<bool>(isAnimate),
+      'isIndeclinable': serializer.toJson<bool>(isIndeclinable),
+      'isSingular': serializer.toJson<bool>(isSingular),
+      'isPlural': serializer.toJson<bool>(isPlural),
       'sgNom': serializer.toJson<String>(sgNom),
       'sgGen': serializer.toJson<String>(sgGen),
       'sgDat': serializer.toJson<String>(sgDat),
@@ -191,8 +207,10 @@ class Noun extends DataClass implements Insertable<Noun> {
           String? bare,
           String? accented,
           Gender? gender,
-          bool? animate,
-          bool? indeclinable,
+          bool? isAnimate,
+          bool? isIndeclinable,
+          bool? isSingular,
+          bool? isPlural,
           String? sgNom,
           String? sgGen,
           String? sgDat,
@@ -210,8 +228,10 @@ class Noun extends DataClass implements Insertable<Noun> {
         bare: bare ?? this.bare,
         accented: accented ?? this.accented,
         gender: gender ?? this.gender,
-        animate: animate ?? this.animate,
-        indeclinable: indeclinable ?? this.indeclinable,
+        isAnimate: isAnimate ?? this.isAnimate,
+        isIndeclinable: isIndeclinable ?? this.isIndeclinable,
+        isSingular: isSingular ?? this.isSingular,
+        isPlural: isPlural ?? this.isPlural,
         sgNom: sgNom ?? this.sgNom,
         sgGen: sgGen ?? this.sgGen,
         sgDat: sgDat ?? this.sgDat,
@@ -232,8 +252,10 @@ class Noun extends DataClass implements Insertable<Noun> {
           ..write('bare: $bare, ')
           ..write('accented: $accented, ')
           ..write('gender: $gender, ')
-          ..write('animate: $animate, ')
-          ..write('indeclinable: $indeclinable, ')
+          ..write('isAnimate: $isAnimate, ')
+          ..write('isIndeclinable: $isIndeclinable, ')
+          ..write('isSingular: $isSingular, ')
+          ..write('isPlural: $isPlural, ')
           ..write('sgNom: $sgNom, ')
           ..write('sgGen: $sgGen, ')
           ..write('sgDat: $sgDat, ')
@@ -260,35 +282,39 @@ class Noun extends DataClass implements Insertable<Noun> {
               $mrjc(
                   gender.hashCode,
                   $mrjc(
-                      animate.hashCode,
+                      isAnimate.hashCode,
                       $mrjc(
-                          indeclinable.hashCode,
+                          isIndeclinable.hashCode,
                           $mrjc(
-                              sgNom.hashCode,
+                              isSingular.hashCode,
                               $mrjc(
-                                  sgGen.hashCode,
+                                  isPlural.hashCode,
                                   $mrjc(
-                                      sgDat.hashCode,
+                                      sgNom.hashCode,
                                       $mrjc(
-                                          sgAcc.hashCode,
+                                          sgGen.hashCode,
                                           $mrjc(
-                                              sgInst.hashCode,
+                                              sgDat.hashCode,
                                               $mrjc(
-                                                  sgPrep.hashCode,
+                                                  sgAcc.hashCode,
                                                   $mrjc(
-                                                      plNom.hashCode,
+                                                      sgInst.hashCode,
                                                       $mrjc(
-                                                          plGen.hashCode,
+                                                          sgPrep.hashCode,
                                                           $mrjc(
-                                                              plDat.hashCode,
+                                                              plNom.hashCode,
                                                               $mrjc(
-                                                                  plAcc
+                                                                  plGen
                                                                       .hashCode,
                                                                   $mrjc(
-                                                                      plInst
+                                                                      plDat
                                                                           .hashCode,
-                                                                      plPrep
-                                                                          .hashCode))))))))))))))))));
+                                                                      $mrjc(
+                                                                          plAcc
+                                                                              .hashCode,
+                                                                          $mrjc(
+                                                                              plInst.hashCode,
+                                                                              plPrep.hashCode))))))))))))))))))));
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -297,8 +323,10 @@ class Noun extends DataClass implements Insertable<Noun> {
           other.bare == this.bare &&
           other.accented == this.accented &&
           other.gender == this.gender &&
-          other.animate == this.animate &&
-          other.indeclinable == this.indeclinable &&
+          other.isAnimate == this.isAnimate &&
+          other.isIndeclinable == this.isIndeclinable &&
+          other.isSingular == this.isSingular &&
+          other.isPlural == this.isPlural &&
           other.sgNom == this.sgNom &&
           other.sgGen == this.sgGen &&
           other.sgDat == this.sgDat &&
@@ -318,8 +346,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
   final Value<String> bare;
   final Value<String> accented;
   final Value<Gender> gender;
-  final Value<bool> animate;
-  final Value<bool> indeclinable;
+  final Value<bool> isAnimate;
+  final Value<bool> isIndeclinable;
+  final Value<bool> isSingular;
+  final Value<bool> isPlural;
   final Value<String> sgNom;
   final Value<String> sgGen;
   final Value<String> sgDat;
@@ -337,8 +367,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     this.bare = const Value.absent(),
     this.accented = const Value.absent(),
     this.gender = const Value.absent(),
-    this.animate = const Value.absent(),
-    this.indeclinable = const Value.absent(),
+    this.isAnimate = const Value.absent(),
+    this.isIndeclinable = const Value.absent(),
+    this.isSingular = const Value.absent(),
+    this.isPlural = const Value.absent(),
     this.sgNom = const Value.absent(),
     this.sgGen = const Value.absent(),
     this.sgDat = const Value.absent(),
@@ -357,8 +389,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     required String bare,
     required String accented,
     required Gender gender,
-    required bool animate,
-    required bool indeclinable,
+    required bool isAnimate,
+    required bool isIndeclinable,
+    required bool isSingular,
+    required bool isPlural,
     required String sgNom,
     required String sgGen,
     required String sgDat,
@@ -374,8 +408,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
   })  : bare = Value(bare),
         accented = Value(accented),
         gender = Value(gender),
-        animate = Value(animate),
-        indeclinable = Value(indeclinable),
+        isAnimate = Value(isAnimate),
+        isIndeclinable = Value(isIndeclinable),
+        isSingular = Value(isSingular),
+        isPlural = Value(isPlural),
         sgNom = Value(sgNom),
         sgGen = Value(sgGen),
         sgDat = Value(sgDat),
@@ -393,8 +429,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     Expression<String>? bare,
     Expression<String>? accented,
     Expression<Gender>? gender,
-    Expression<bool>? animate,
-    Expression<bool>? indeclinable,
+    Expression<bool>? isAnimate,
+    Expression<bool>? isIndeclinable,
+    Expression<bool>? isSingular,
+    Expression<bool>? isPlural,
     Expression<String>? sgNom,
     Expression<String>? sgGen,
     Expression<String>? sgDat,
@@ -413,8 +451,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       if (bare != null) 'bare': bare,
       if (accented != null) 'accented': accented,
       if (gender != null) 'gender': gender,
-      if (animate != null) 'animate': animate,
-      if (indeclinable != null) 'indeclinable': indeclinable,
+      if (isAnimate != null) 'is_animate': isAnimate,
+      if (isIndeclinable != null) 'is_indeclinable': isIndeclinable,
+      if (isSingular != null) 'is_singular': isSingular,
+      if (isPlural != null) 'is_plural': isPlural,
       if (sgNom != null) 'sg_nom': sgNom,
       if (sgGen != null) 'sg_gen': sgGen,
       if (sgDat != null) 'sg_dat': sgDat,
@@ -435,8 +475,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       Value<String>? bare,
       Value<String>? accented,
       Value<Gender>? gender,
-      Value<bool>? animate,
-      Value<bool>? indeclinable,
+      Value<bool>? isAnimate,
+      Value<bool>? isIndeclinable,
+      Value<bool>? isSingular,
+      Value<bool>? isPlural,
       Value<String>? sgNom,
       Value<String>? sgGen,
       Value<String>? sgDat,
@@ -454,8 +496,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       bare: bare ?? this.bare,
       accented: accented ?? this.accented,
       gender: gender ?? this.gender,
-      animate: animate ?? this.animate,
-      indeclinable: indeclinable ?? this.indeclinable,
+      isAnimate: isAnimate ?? this.isAnimate,
+      isIndeclinable: isIndeclinable ?? this.isIndeclinable,
+      isSingular: isSingular ?? this.isSingular,
+      isPlural: isPlural ?? this.isPlural,
       sgNom: sgNom ?? this.sgNom,
       sgGen: sgGen ?? this.sgGen,
       sgDat: sgDat ?? this.sgDat,
@@ -487,11 +531,17 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       final converter = $NounsTable.$converter0;
       map['gender'] = Variable<int>(converter.mapToSql(gender.value)!);
     }
-    if (animate.present) {
-      map['animate'] = Variable<bool>(animate.value);
+    if (isAnimate.present) {
+      map['is_animate'] = Variable<bool>(isAnimate.value);
     }
-    if (indeclinable.present) {
-      map['indeclinable'] = Variable<bool>(indeclinable.value);
+    if (isIndeclinable.present) {
+      map['is_indeclinable'] = Variable<bool>(isIndeclinable.value);
+    }
+    if (isSingular.present) {
+      map['is_singular'] = Variable<bool>(isSingular.value);
+    }
+    if (isPlural.present) {
+      map['is_plural'] = Variable<bool>(isPlural.value);
     }
     if (sgNom.present) {
       map['sg_nom'] = Variable<String>(sgNom.value);
@@ -539,8 +589,10 @@ class NounsCompanion extends UpdateCompanion<Noun> {
           ..write('bare: $bare, ')
           ..write('accented: $accented, ')
           ..write('gender: $gender, ')
-          ..write('animate: $animate, ')
-          ..write('indeclinable: $indeclinable, ')
+          ..write('isAnimate: $isAnimate, ')
+          ..write('isIndeclinable: $isIndeclinable, ')
+          ..write('isSingular: $isSingular, ')
+          ..write('isPlural: $isPlural, ')
           ..write('sgNom: $sgNom, ')
           ..write('sgGen: $sgGen, ')
           ..write('sgDat: $sgDat, ')
@@ -581,19 +633,31 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
       GeneratedColumn<int?>('gender', aliasedName, false,
               typeName: 'INTEGER', requiredDuringInsert: true)
           .withConverter<Gender>($NounsTable.$converter0);
-  final VerificationMeta _animateMeta = const VerificationMeta('animate');
-  late final GeneratedColumn<bool?> animate = GeneratedColumn<bool?>(
-      'animate', aliasedName, false,
+  final VerificationMeta _isAnimateMeta = const VerificationMeta('isAnimate');
+  late final GeneratedColumn<bool?> isAnimate = GeneratedColumn<bool?>(
+      'is_animate', aliasedName, false,
       typeName: 'INTEGER',
       requiredDuringInsert: true,
-      defaultConstraints: 'CHECK (animate IN (0, 1))');
-  final VerificationMeta _indeclinableMeta =
-      const VerificationMeta('indeclinable');
-  late final GeneratedColumn<bool?> indeclinable = GeneratedColumn<bool?>(
-      'indeclinable', aliasedName, false,
+      defaultConstraints: 'CHECK (is_animate IN (0, 1))');
+  final VerificationMeta _isIndeclinableMeta =
+      const VerificationMeta('isIndeclinable');
+  late final GeneratedColumn<bool?> isIndeclinable = GeneratedColumn<bool?>(
+      'is_indeclinable', aliasedName, false,
       typeName: 'INTEGER',
       requiredDuringInsert: true,
-      defaultConstraints: 'CHECK (indeclinable IN (0, 1))');
+      defaultConstraints: 'CHECK (is_indeclinable IN (0, 1))');
+  final VerificationMeta _isSingularMeta = const VerificationMeta('isSingular');
+  late final GeneratedColumn<bool?> isSingular = GeneratedColumn<bool?>(
+      'is_singular', aliasedName, false,
+      typeName: 'INTEGER',
+      requiredDuringInsert: true,
+      defaultConstraints: 'CHECK (is_singular IN (0, 1))');
+  final VerificationMeta _isPluralMeta = const VerificationMeta('isPlural');
+  late final GeneratedColumn<bool?> isPlural = GeneratedColumn<bool?>(
+      'is_plural', aliasedName, false,
+      typeName: 'INTEGER',
+      requiredDuringInsert: true,
+      defaultConstraints: 'CHECK (is_plural IN (0, 1))');
   final VerificationMeta _sgNomMeta = const VerificationMeta('sgNom');
   late final GeneratedColumn<String?> sgNom = GeneratedColumn<String?>(
       'sg_nom', aliasedName, false,
@@ -648,8 +712,10 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
         bare,
         accented,
         gender,
-        animate,
-        indeclinable,
+        isAnimate,
+        isIndeclinable,
+        isSingular,
+        isPlural,
         sgNom,
         sgGen,
         sgDat,
@@ -688,19 +754,33 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
       context.missing(_accentedMeta);
     }
     context.handle(_genderMeta, const VerificationResult.success());
-    if (data.containsKey('animate')) {
-      context.handle(_animateMeta,
-          animate.isAcceptableOrUnknown(data['animate']!, _animateMeta));
+    if (data.containsKey('is_animate')) {
+      context.handle(_isAnimateMeta,
+          isAnimate.isAcceptableOrUnknown(data['is_animate']!, _isAnimateMeta));
     } else if (isInserting) {
-      context.missing(_animateMeta);
+      context.missing(_isAnimateMeta);
     }
-    if (data.containsKey('indeclinable')) {
+    if (data.containsKey('is_indeclinable')) {
       context.handle(
-          _indeclinableMeta,
-          indeclinable.isAcceptableOrUnknown(
-              data['indeclinable']!, _indeclinableMeta));
+          _isIndeclinableMeta,
+          isIndeclinable.isAcceptableOrUnknown(
+              data['is_indeclinable']!, _isIndeclinableMeta));
     } else if (isInserting) {
-      context.missing(_indeclinableMeta);
+      context.missing(_isIndeclinableMeta);
+    }
+    if (data.containsKey('is_singular')) {
+      context.handle(
+          _isSingularMeta,
+          isSingular.isAcceptableOrUnknown(
+              data['is_singular']!, _isSingularMeta));
+    } else if (isInserting) {
+      context.missing(_isSingularMeta);
+    }
+    if (data.containsKey('is_plural')) {
+      context.handle(_isPluralMeta,
+          isPlural.isAcceptableOrUnknown(data['is_plural']!, _isPluralMeta));
+    } else if (isInserting) {
+      context.missing(_isPluralMeta);
     }
     if (data.containsKey('sg_nom')) {
       context.handle(

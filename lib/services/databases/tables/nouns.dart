@@ -10,10 +10,10 @@ class Nouns extends Table {
   // TextColumn get translationsDE => text()();
   IntColumn get gender => integer().map(const GenderConverter())();
   // partner
-  BoolColumn get animate => boolean()();
-  BoolColumn get indeclinable => boolean()();
-  // sg_only
-  // pl_only
+  BoolColumn get isAnimate => boolean()();
+  BoolColumn get isIndeclinable => boolean()();
+  BoolColumn get isSingular => boolean()();
+  BoolColumn get isPlural => boolean()();
   TextColumn get sgNom => text()();
   TextColumn get sgGen => text()();
   TextColumn get sgDat => text()();
