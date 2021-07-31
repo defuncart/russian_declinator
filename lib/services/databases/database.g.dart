@@ -1889,8 +1889,8 @@ class $AdjectivesTable extends Adjectives
   }
 }
 
-abstract class _$MyDatabase extends GeneratedDatabase {
-  _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+abstract class _$Database extends GeneratedDatabase {
+  _$Database(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $NounsTable nouns = $NounsTable(this);
   late final $AdjectivesTable adjectives = $AdjectivesTable(this);
   @override

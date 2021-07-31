@@ -3,7 +3,7 @@ import 'dart:io' show File;
 import 'package:archive/archive_io.dart';
 import 'package:moor/ffi.dart';
 import 'package:moor/moor.dart';
-import 'package:russian_declinator/services/databases/database.dart' show Adjective, MyDatabase, Noun;
+import 'package:russian_declinator/services/databases/database.dart' show Adjective, Database, Noun;
 
 import 'utils/convert_adjectives.dart';
 import 'utils/convert_nouns.dart';
@@ -17,7 +17,7 @@ void main() async {
   final nouns = await convertNouns();
   final adjectives = await convertAdjectives();
 
-  final db = MyDatabase(openConnection());
+  final db = Database(openConnection());
   await db.addMultipleNouns(nouns);
   await db.addMultipleAdjectives(adjectives);
 
@@ -45,7 +45,7 @@ LazyDatabase openConnection() {
   });
 }
 
-extension on MyDatabase {
+extension on Database {
   Future<void> addMultipleNouns(List<Noun> multipleNouns) => batch((batch) {
         batch.insertAll(nouns, multipleNouns);
       });

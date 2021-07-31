@@ -9,9 +9,9 @@ export 'extensions/noun_extensions.dart';
 part 'database.g.dart';
 
 @UseMoor(tables: [Nouns, Adjectives])
-class MyDatabase extends _$MyDatabase {
+class Database extends _$Database {
   // we tell the database where to store the data with this constructor
-  MyDatabase(QueryExecutor createDb) : super(createDb);
+  Database(QueryExecutor createDb) : super(createDb);
 
   // you should bump this number whenever you change or add a table definition. Migrations
   // are covered later in this readme.
