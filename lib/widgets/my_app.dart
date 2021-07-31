@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:russian_declinator/configs/app_themes.dart';
@@ -65,15 +66,34 @@ class _MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: AppLocalizations.delegate.supportedLocales,
-      home: const HomeScreen(),
+    return Consumer(
+      builder: (_, ref, __) {
+        final isDarkMode = ref.watch(isDarkModeProvider).state;
+        return AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle(
+            systemNavigationBarColor:
+                isDarkMode ? AppThemes.dark.scaffoldBackgroundColor : AppThemes.light.scaffoldBackgroundColor,
+            statusBarColor: Colors.transparent,
+            systemNavigationBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark,
+            statusBarIconBrightness: isDarkMode ? Brightness.light : Brightness.dark,
+            statusBarBrightness: isDarkMode ? Brightness.dark : Brightness.light,
+          ),
+          child: MaterialApp(
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: AppLocalizations.delegate.supportedLocales,
+            theme: AppThemes.light,
+            darkTheme: AppThemes.dark,
+            themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            locale: ref.watch(languageProvider).state,
+            home: const HomeScreen(),
+          ),
+        );
+      },
     );
   }
 }
