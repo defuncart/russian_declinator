@@ -4,7 +4,7 @@ import 'package:russian_declinator/services/databases/converters/gender_converte
 import 'package:russian_declinator/services/databases/tables/adjectives.dart';
 import 'package:russian_declinator/services/databases/tables/nouns.dart';
 
-export 'noun_extensions.dart';
+export 'extensions/noun_extensions.dart';
 
 part 'database.g.dart';
 
