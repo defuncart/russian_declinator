@@ -1,6 +1,7 @@
 name: russian_declinator
 description: A russian declension app.
 version: 0.0.1+1
+publish_to: 'none'
 
 environment:
   sdk: ">=2.13.0 <3.0.0"
@@ -12,6 +13,13 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  path_provider: ^2.0.2
+  hive: ^2.0.4
+  flutter_riverpod: ^1.0.0-dev.6
+  grouped_buttons:
+    git:
+      url: https://github.com/defuncart/fork_grouped_buttons
+      ref: feature/null-safety
 
 dev_dependencies:
   flutter_test:

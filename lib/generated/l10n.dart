@@ -61,12 +61,42 @@ class AppLocalizations {
     );
   }
 
-  /// `Hello World!`
-  String get helloWorld {
+  /// `Home`
+  String get homeScreenBottomBarHomeLabel {
     return Intl.message(
-      'Hello World!',
-      name: 'helloWorld',
-      desc: 'test',
+      'Home',
+      name: 'homeScreenBottomBarHomeLabel',
+      desc: 'A label for the home bottom nav item',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get homeScreenBottomBarSettingsLabel {
+    return Intl.message(
+      'Settings',
+      name: 'homeScreenBottomBarSettingsLabel',
+      desc: 'A label for the settings bottom nav item',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get settingsTabDarkModeLabel {
+    return Intl.message(
+      'Dark Mode',
+      name: 'settingsTabDarkModeLabel',
+      desc: 'A label for dark mode setting',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get settingsTabLanguageLabel {
+    return Intl.message(
+      'Language',
+      name: 'settingsTabLanguageLabel',
+      desc: 'A label for language setting',
       args: [],
     );
   }

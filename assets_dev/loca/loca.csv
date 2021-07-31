@@ -1,3 +1,6 @@
 key;description;en;de;ru
 appName;Name of the app;Russian Declinator;Russisch Deklinator;Русский склонитель
-helloWorld;test;Hello World!;Hallo Welt!;Привет мир!
+homeScreenBottomBarHomeLabel;A label for the home bottom nav item;Home;;
+homeScreenBottomBarSettingsLabel;A label for the settings bottom nav item;Settings;;
+settingsTabDarkModeLabel;A label for dark mode setting;Dark Mode;;
+settingsTabLanguageLabel;A label for language setting;Language;;
