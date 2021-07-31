@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:russian_declinator/generated/l10n.dart';
-import 'package:russian_declinator/widgets/home_screen/home_tab.dart';
-import 'package:russian_declinator/widgets/home_screen/settings_tab.dart';
+import 'package:russian_declinator/widgets/home_screen/home_tab/home_tab.dart';
+import 'package:russian_declinator/widgets/home_screen/settings_tab/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
