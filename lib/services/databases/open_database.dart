@@ -1,5 +1,6 @@
 import 'dart:io' show File, Platform;
 
+import 'package:archive/archive.dart';
 import 'package:flutter/services.dart';
 import 'package:moor/ffi.dart';
 import 'package:moor/moor.dart';
@@ -11,8 +12,13 @@ LazyDatabase openConnection() {
     final dbFilepath = await _dbFilepath;
     final dbFile = File(dbFilepath);
     if (!dbFile.existsSync()) {
-      final blob = await rootBundle.load('assets/db/db.sqlite');
-      await dbFile.writeAsBytes(blob.buffer.asUint8List());
+      final blob = await rootBundle.load('assets/db/db.zip');
+
+      // consider using flutter_archive for larger dbs (or isolates)
+      final archive = ZipDecoder().decodeBytes(blob.buffer.asUint8List());
+      final bytes = archive.files.first.content;
+
+      await dbFile.writeAsBytes(bytes);
     }
 
     return VmDatabase(dbFile);

@@ -1,5 +1,6 @@
 import 'dart:io' show File, exit;
 
+import 'package:archive/archive_io.dart';
 import 'package:moor/ffi.dart';
 import 'package:moor/moor.dart';
 import 'package:russian_declinator/enums/gender.dart';
@@ -9,6 +10,7 @@ import 'package:russian_declinator/services/databases/database.dart' show MyData
 
 const _inputFilepath = 'assets_dev/temp/nouns.csv';
 const _outputFilepath = 'assets/db/db.sqlite';
+const _outputZipFilepath = 'assets/db/db.zip';
 
 void main() async {
   if (!File(_inputFilepath).existsSync()) {
@@ -65,6 +67,13 @@ void main() async {
   await db.addMultipleNouns(nouns);
 
   print('Written to $_outputFilepath!');
+
+  final encoder = ZipFileEncoder();
+  encoder.create(_outputZipFilepath);
+  encoder.addFile(File(_outputFilepath));
+  encoder.close();
+
+  print('Written to $_outputZipFilepath!');
 }
 
 const _genders = {
