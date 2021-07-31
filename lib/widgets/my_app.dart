@@ -24,7 +24,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   }
 
   Future<bool> _initApp() async {
-    DIContainer.initialize(ref);
+    DIContainer.initialize(ref.read);
 
     await DIContainer.settingsDatabase.initialize();
 
