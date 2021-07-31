@@ -18,6 +18,8 @@ If you would like to build the app yourself, then you simply need:
 - web:
     - Chrome
 
+To run on web, download the latest version of `sql-wasm.js` and `sql-wasm.wasm` from [here](https://github.com/sql-js/sql.js/releases) and place them in the web folder.
+
 ## Code Generation
 
 ### Localizations

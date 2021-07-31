@@ -51,3 +51,7 @@ assets_dev/db
 
 # ignore local assets
 assets/db/db.sqlite
+
+# ignore web specific assets
+web/sql-wasm.js
+web/sql-wasm.wasm
