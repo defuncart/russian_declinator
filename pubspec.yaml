@@ -13,6 +13,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  path: ^1.8.0
   path_provider: ^2.0.2
   hive: ^2.0.4
   flutter_riverpod: ^1.0.0-dev.6
@@ -20,6 +21,9 @@ dependencies:
     git:
       url: https://github.com/defuncart/fork_grouped_buttons
       ref: feature/null-safety
+  sqlite3: ^1.1.2
+  moor: ^4.4.1
+  sqlite3_flutter_libs: ^0.5.0
 
 dev_dependencies:
   flutter_test:
@@ -31,6 +35,8 @@ dev_dependencies:
     git:
       url: https://github.com/defuncart/fork_intl_utils
       ref: feature/ignore-avoid_catches_without_on_clauses-always_use_package_imports-generated-code
+  moor_generator: ^4.4.1
+  build_runner: ^2.0.6
 
 flutter:
   uses-material-design: true
