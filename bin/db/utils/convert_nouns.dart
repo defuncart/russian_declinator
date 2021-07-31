@@ -4,7 +4,7 @@ import 'package:russian_declinator/services/databases/database.dart' show Noun;
 import 'convert.dart';
 import 'import_csv.dart';
 
-const _inputFilepath = 'assets_dev/temp/nouns.csv';
+const _inputFilepath = 'assets_dev/db/nouns.csv';
 
 Future<List<Noun>> convertNouns() async => convert(
       importCSV: () => importCSV(

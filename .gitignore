@@ -46,8 +46,8 @@ app.*.map.json
 /android/app/release
 
 # ignore local dev assets
+assets_dev/_db
 assets_dev/db
-assets_dev/temp
 
 # ignore local assets
 assets/db/db.sqlite

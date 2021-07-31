@@ -3,7 +3,7 @@ import 'package:russian_declinator/services/databases/database.dart' show Adject
 import 'convert.dart';
 import 'import_csv.dart';
 
-const _inputFilepath = 'assets_dev/temp/adjectives.csv';
+const _inputFilepath = 'assets_dev/db/adjectives.csv';
 
 Future<List<Adjective>> convertAdjectives() async => convert(
       importCSV: () => importCSV(
