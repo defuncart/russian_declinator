@@ -20,5 +20,5 @@ class MyDatabase extends _$MyDatabase {
 
   Future<List<Noun>> get allNouns => select(nouns).get();
 
-  Future<List<Adjective>> get allAdjectivess => select(adjectives).get();
+  Future<List<Adjective>> get allAdjectives => select(adjectives).get();
 }
