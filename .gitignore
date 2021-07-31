@@ -44,3 +44,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ignore local dev assets
+assets_dev/db
+assets_dev/temp
