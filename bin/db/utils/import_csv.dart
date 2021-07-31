@@ -4,7 +4,7 @@ import 'dart:io' show File, exit;
 
 Future<List<List<String>>> importCSV({
   required String filepath,
-  required int expectedNumberRows,
+  int? expectedNumberRows,
   required int expectedNumberColumns,
 }) async {
   if (!File(filepath).existsSync()) {
@@ -23,9 +23,11 @@ Future<List<List<String>>> importCSV({
       exit(0);
     }
   }
-  if (lines.length != expectedNumberRows) {
-    print('${lines.length} is incorrect db length. Expected $expectedNumberRows.');
-    exit(0);
+  if (expectedNumberRows != null) {
+    if (lines.length != expectedNumberRows) {
+      print('${lines.length} is incorrect db length. Expected $expectedNumberRows.');
+      exit(0);
+    }
   }
 
   return lines;

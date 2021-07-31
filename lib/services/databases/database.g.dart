@@ -11,7 +11,7 @@ class Noun extends DataClass implements Insertable<Noun> {
   final int id;
   final String bare;
   final String accented;
-  final Gender gender;
+  final Gender? gender;
   final bool isAnimate;
   final bool isIndeclinable;
   final bool isSingular;
@@ -32,7 +32,7 @@ class Noun extends DataClass implements Insertable<Noun> {
       {required this.id,
       required this.bare,
       required this.accented,
-      required this.gender,
+      this.gender,
       required this.isAnimate,
       required this.isIndeclinable,
       required this.isSingular,
@@ -60,7 +60,7 @@ class Noun extends DataClass implements Insertable<Noun> {
       accented: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}accented'])!,
       gender: $NounsTable.$converter0.mapToDart(const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}gender']))!,
+          .mapFromDatabaseResponse(data['${effectivePrefix}gender'])),
       isAnimate: const BoolType()
           .mapFromDatabaseResponse(data['${effectivePrefix}is_animate'])!,
       isIndeclinable: const BoolType()
@@ -101,9 +101,9 @@ class Noun extends DataClass implements Insertable<Noun> {
     map['id'] = Variable<int>(id);
     map['bare'] = Variable<String>(bare);
     map['accented'] = Variable<String>(accented);
-    {
+    if (!nullToAbsent || gender != null) {
       final converter = $NounsTable.$converter0;
-      map['gender'] = Variable<int>(converter.mapToSql(gender)!);
+      map['gender'] = Variable<int?>(converter.mapToSql(gender));
     }
     map['is_animate'] = Variable<bool>(isAnimate);
     map['is_indeclinable'] = Variable<bool>(isIndeclinable);
@@ -129,7 +129,8 @@ class Noun extends DataClass implements Insertable<Noun> {
       id: Value(id),
       bare: Value(bare),
       accented: Value(accented),
-      gender: Value(gender),
+      gender:
+          gender == null && nullToAbsent ? const Value.absent() : Value(gender),
       isAnimate: Value(isAnimate),
       isIndeclinable: Value(isIndeclinable),
       isSingular: Value(isSingular),
@@ -156,7 +157,7 @@ class Noun extends DataClass implements Insertable<Noun> {
       id: serializer.fromJson<int>(json['id']),
       bare: serializer.fromJson<String>(json['bare']),
       accented: serializer.fromJson<String>(json['accented']),
-      gender: serializer.fromJson<Gender>(json['gender']),
+      gender: serializer.fromJson<Gender?>(json['gender']),
       isAnimate: serializer.fromJson<bool>(json['isAnimate']),
       isIndeclinable: serializer.fromJson<bool>(json['isIndeclinable']),
       isSingular: serializer.fromJson<bool>(json['isSingular']),
@@ -182,7 +183,7 @@ class Noun extends DataClass implements Insertable<Noun> {
       'id': serializer.toJson<int>(id),
       'bare': serializer.toJson<String>(bare),
       'accented': serializer.toJson<String>(accented),
-      'gender': serializer.toJson<Gender>(gender),
+      'gender': serializer.toJson<Gender?>(gender),
       'isAnimate': serializer.toJson<bool>(isAnimate),
       'isIndeclinable': serializer.toJson<bool>(isIndeclinable),
       'isSingular': serializer.toJson<bool>(isSingular),
@@ -345,7 +346,7 @@ class NounsCompanion extends UpdateCompanion<Noun> {
   final Value<int> id;
   final Value<String> bare;
   final Value<String> accented;
-  final Value<Gender> gender;
+  final Value<Gender?> gender;
   final Value<bool> isAnimate;
   final Value<bool> isIndeclinable;
   final Value<bool> isSingular;
@@ -388,7 +389,7 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     this.id = const Value.absent(),
     required String bare,
     required String accented,
-    required Gender gender,
+    this.gender = const Value.absent(),
     required bool isAnimate,
     required bool isIndeclinable,
     required bool isSingular,
@@ -407,7 +408,6 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     required String plPrep,
   })  : bare = Value(bare),
         accented = Value(accented),
-        gender = Value(gender),
         isAnimate = Value(isAnimate),
         isIndeclinable = Value(isIndeclinable),
         isSingular = Value(isSingular),
@@ -428,7 +428,7 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     Expression<int>? id,
     Expression<String>? bare,
     Expression<String>? accented,
-    Expression<Gender>? gender,
+    Expression<Gender?>? gender,
     Expression<bool>? isAnimate,
     Expression<bool>? isIndeclinable,
     Expression<bool>? isSingular,
@@ -474,7 +474,7 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       {Value<int>? id,
       Value<String>? bare,
       Value<String>? accented,
-      Value<Gender>? gender,
+      Value<Gender?>? gender,
       Value<bool>? isAnimate,
       Value<bool>? isIndeclinable,
       Value<bool>? isSingular,
@@ -529,7 +529,7 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     }
     if (gender.present) {
       final converter = $NounsTable.$converter0;
-      map['gender'] = Variable<int>(converter.mapToSql(gender.value)!);
+      map['gender'] = Variable<int?>(converter.mapToSql(gender.value));
     }
     if (isAnimate.present) {
       map['is_animate'] = Variable<bool>(isAnimate.value);
@@ -630,8 +630,8 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
       typeName: 'TEXT', requiredDuringInsert: true);
   final VerificationMeta _genderMeta = const VerificationMeta('gender');
   late final GeneratedColumnWithTypeConverter<Gender, int?> gender =
-      GeneratedColumn<int?>('gender', aliasedName, false,
-              typeName: 'INTEGER', requiredDuringInsert: true)
+      GeneratedColumn<int?>('gender', aliasedName, true,
+              typeName: 'INTEGER', requiredDuringInsert: false)
           .withConverter<Gender>($NounsTable.$converter0);
   final VerificationMeta _isAnimateMeta = const VerificationMeta('isAnimate');
   late final GeneratedColumn<bool?> isAnimate = GeneratedColumn<bool?>(

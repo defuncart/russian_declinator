@@ -8,7 +8,6 @@ const _inputFilepath = 'assets_dev/db/adjectives.csv';
 Future<List<Adjective>> convertAdjectives() async => convert(
       importCSV: () => importCSV(
         filepath: _inputFilepath,
-        expectedNumberRows: 100,
         expectedNumberColumns: 34,
       ),
       convert: ({required int id, required List<String> line}) => Adjective(
@@ -42,6 +41,8 @@ Future<List<Adjective>> convertAdjectives() async => convert(
         plInst: line[_AdjectiveIndex.plInst],
         plPrep: line[_AdjectiveIndex.plPrep],
       ),
+      toIgnore: ['как'],
+      length: 101,
     );
 
 // ignore_for_file: unused_field, constant_identifier_names

@@ -9,7 +9,6 @@ const _inputFilepath = 'assets_dev/db/nouns.csv';
 Future<List<Noun>> convertNouns() async => convert(
       importCSV: () => importCSV(
         filepath: _inputFilepath,
-        expectedNumberRows: 100,
         expectedNumberColumns: 22,
       ),
       convert: ({required int id, required List<String> line}) => Noun(
@@ -36,6 +35,8 @@ Future<List<Noun>> convertNouns() async => convert(
         plInst: line[_NounIndex.plInst],
         plPrep: line[_NounIndex.plPrep],
       ),
+      toIgnore: ['ребята'],
+      length: 101,
     );
 
 const _genders = {
@@ -44,7 +45,11 @@ const _genders = {
   'n': Gender.neutral,
 };
 
-Gender _genderFromString(String gender) {
+Gender? _genderFromString(String? gender) {
+  if (gender == null || gender.isEmpty) {
+    return null;
+  }
+
   if (!_genders.keys.contains(gender)) {
     throw ArgumentError('Gender ${gender.toString()} is not valid');
   }
