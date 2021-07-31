@@ -20,6 +20,8 @@ If you would like to build the app yourself, then you simply need:
 
 To run on web, download the latest version of `sql-wasm.js` and `sql-wasm.wasm` from [here](https://github.com/sql-js/sql.js/releases) and place them in the web folder.
 
+Note that the database must first be generated before running locally. See Tools for more info.
+
 ## Code Generation
 
 ### Localizations
@@ -40,13 +42,17 @@ flutter pub run build_runner build --delete-conflicting-outputs
 
 ## Tools
 
+Firstly ensure that the CSV databases are downloaded to assets_dev:
+
+```sh
+dart bin/db/download_dev_assets.dart
+```
+
 To create the SQLite database, run the following script:
 
 ```sh
 dart bin/db/create_db.dart 
 ```
-
-Note that this script assumes that assets_dev has been populated with CSV databases. If these are not presently, firstly run `dart bin/db/download_dev_assets.dart`.
 
 ## Credits
 
