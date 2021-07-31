@@ -40,6 +40,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/db/db.sqlite
 
 arb_generator:
   input_filepath: "assets_dev/loca/loca.csv"
