@@ -35,6 +35,8 @@ jobs:
           channel: 'stable'
       - name: Enable macOS Support
         run: flutter config --enable-macos-desktop
+      - name: Install packages
+        run: flutter pub get
       - name: Generate db
         run: |
           dart bin/db/download_dev_assets.dart
@@ -52,6 +54,8 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Install packages
+        run: flutter pub get
       - name: Generate db
         run: |
           dart bin/db/download_dev_assets.dart
@@ -69,6 +73,8 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Install packages
+        run: flutter pub get
       - name: Generate db
         run: |
           dart bin/db/download_dev_assets.dart
@@ -86,6 +92,8 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Install packages
+        run: flutter pub get
       - name: Generate db
         run: |
           dart bin/db/download_dev_assets.dart
