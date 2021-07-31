@@ -6,8 +6,8 @@ class Nouns extends Table {
 
   TextColumn get bare => text()();
   TextColumn get accented => text()();
-  TextColumn get translationsEN => text()();
-  TextColumn get translationsDE => text()();
+  // TextColumn get translationsEN => text()();
+  // TextColumn get translationsDE => text()();
   IntColumn get gender => integer().map(const GenderConverter())();
   // partner
   BoolColumn get animate => boolean()();
@@ -27,26 +27,3 @@ class Nouns extends Table {
   TextColumn get plInst => text()();
   TextColumn get plPrep => text()();
 }
-
-// bare
-// 	accented
-//   translations_en
-//   	translations_de
-//     gender
-//     partner
-//     animate
-//     indeclinable
-//     sg_only
-//     pl_only
-//     sg_nom
-//     sg_gen
-//     sg_dat
-//     sg_acc
-//     sg_inst
-//     sg_prep
-//     pl_nom
-//     pl_gen
-//     pl_dat
-//     pl_acc
-//     pl_inst
-//     pl_prep
