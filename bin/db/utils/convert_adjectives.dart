@@ -8,7 +8,7 @@ const _inputFilepath = 'assets_dev/temp/adjectives.csv';
 Future<List<Adjective>> convertAdjectives() async => convert(
       importCSV: () => importCSV(
         filepath: _inputFilepath,
-        expectedNumberRows: 10,
+        expectedNumberRows: 100,
         expectedNumberColumns: 34,
       ),
       convert: ({required int id, required List<String> line}) => Adjective(

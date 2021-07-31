@@ -9,7 +9,7 @@ const _inputFilepath = 'assets_dev/temp/nouns.csv';
 Future<List<Noun>> convertNouns() async => convert(
       importCSV: () => importCSV(
         filepath: _inputFilepath,
-        expectedNumberRows: 10,
+        expectedNumberRows: 100,
         expectedNumberColumns: 22,
       ),
       convert: ({required int id, required List<String> line}) => Noun(
