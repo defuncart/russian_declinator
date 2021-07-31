@@ -212,6 +212,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  grouped_buttons:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "feature/null-safety"
+      resolved-ref: "6122c1048dcf894ec17d0387f263d9c528711cd3"
+      url: "https://github.com/defuncart/fork_grouped_buttons"
+    source: git
+    version: "1.0.4"
   hive:
     dependency: "direct main"
     description:
