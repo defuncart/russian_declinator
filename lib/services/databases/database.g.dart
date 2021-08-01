@@ -7,7 +7,7 @@ part of 'database.dart';
 // **************************************************************************
 
 // ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
-class Noun extends DataClass implements Insertable<Noun> {
+class Noun extends DataClass implements Insertable<Noun>, Word {
   final int id;
   final String bare;
   final String accented;
@@ -873,7 +873,7 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
   static TypeConverter<Gender, int> $converter0 = const GenderConverter();
 }
 
-class Adjective extends DataClass implements Insertable<Adjective> {
+class Adjective extends DataClass implements Insertable<Adjective>, Word {
   final int id;
   final String bare;
   final String accented;
