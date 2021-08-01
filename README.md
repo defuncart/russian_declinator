@@ -26,7 +26,7 @@ Note that the database must first be generated before running locally. See Tools
 
 ### Localizations
 
-To add new localizations, update assets_dev/loca/loca.csv and run
+To add new localizations, update `assets_dev/loca/loca.csv` and run
 
 ```sh
 flutter pub run arb_generator ; sh bin/pseudoloca_generate.sh
@@ -34,7 +34,7 @@ flutter pub run arb_generator ; sh bin/pseudoloca_generate.sh
 
 ### Moor Database
 
-This should not be needed unless database.g.dart is accidentally deleted.
+This should not be needed unless `database.g.dart` is accidentally deleted.
 
 ```sh
 flutter pub run build_runner build --delete-conflicting-outputs
