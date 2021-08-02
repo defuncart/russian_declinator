@@ -1,5 +1,17 @@
 key;description;en;de;ru
 appName;Name of the app;Russian Declinator;Russisch Deklinator;Русский склонитель
+generalNominative;Nominative case;Nominative;Nominativ;именительный
+generalGenitive;Genitive case;Genitive;Genitiv;родительный
+generalDative;Dative case;Dative;Dativ;дательный
+generalAccusative;Accusative case;Accusative;Akkusativ;винительный
+generalInstrumental;Instrumental case;Instrumental;Instrumental;творительный
+generalPrepositional;Prepositional case;Prepositional;Präpositiv;предложный
+generalNominativeShort;Nominative case short;Nom;Nom;
+generalGenitiveShort;Genitive case short;Gen;Gen;
+generalDativeShort;Dative case short;Dat;Dat;
+generalAccusativeShort;Accusative case short;Acc;Akk;
+generalInstrumentalShort;Instrumental case short;Inst;Inst;
+generalPrepositionalShort;Prepositional case short;Prep;Präp;
 searchWordsHintText;A hint text to display when searching for words;Search;Suchen;
 homeScreenBottomBarHomeLabel;A label for the home bottom nav item;Home;;
 homeScreenBottomBarSettingsLabel;A label for the settings bottom nav item;Settings;;

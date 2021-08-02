@@ -22,13 +22,34 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage(
-            "[Яцццззииaaп Деэслиипaaтооя]"),
+            "[Яцццззииaaп Дёеслиипaaтооя]"),
+        "generalAccusative":
+            MessageLookupByLibrary.simpleMessage("[ААссццзaaтиичээ]"),
+        "generalAccusativeShort":
+            MessageLookupByLibrary.simpleMessage("[АААсс]"),
+        "generalDative": MessageLookupByLibrary.simpleMessage("[Дaaтиичёе]"),
+        "generalDativeShort": MessageLookupByLibrary.simpleMessage("[Дaaaт]"),
+        "generalGenitive":
+            MessageLookupByLibrary.simpleMessage("[Гээпиитиичээ]"),
+        "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("[Гэёеп]"),
+        "generalInstrumental":
+            MessageLookupByLibrary.simpleMessage("[ИИИпзтяццмеёптaaл]"),
+        "generalInstrumentalShort":
+            MessageLookupByLibrary.simpleMessage("[ИИИпзт]"),
+        "generalNominative":
+            MessageLookupByLibrary.simpleMessage("[Поомиипaaтиичэе]"),
+        "generalNominativeShort":
+            MessageLookupByLibrary.simpleMessage("[Пооом]"),
+        "generalPrepositional":
+            MessageLookupByLibrary.simpleMessage("[Ряёероозиитииоопaaл]"),
+        "generalPrepositionalShort":
+            MessageLookupByLibrary.simpleMessage("[Ряеээр]"),
         "homeScreenBottomBarHomeLabel":
-            MessageLookupByLibrary.simpleMessage("[Ноомее]"),
+            MessageLookupByLibrary.simpleMessage("[Ноомёё]"),
         "homeScreenBottomBarSettingsLabel":
-            MessageLookupByLibrary.simpleMessage("[Зеёээттиипгз]"),
+            MessageLookupByLibrary.simpleMessage("[Зеэеёттиипгз]"),
         "searchWordsHintText":
-            MessageLookupByLibrary.simpleMessage("[Зёэёaaясн]"),
+            MessageLookupByLibrary.simpleMessage("[Зэеэaaясн]"),
         "settingsTabDarkModeLabel":
             MessageLookupByLibrary.simpleMessage("[Дaaaaяк Моодее]"),
         "settingsTabLanguageLabel":
