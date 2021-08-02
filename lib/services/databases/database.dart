@@ -38,9 +38,16 @@ class Database extends _$Database {
   }
 
   @visibleForTesting
-  Future<List<Noun>> nounsContaining(String text) => (select(nouns)..where((noun) => noun.bare.contains(text))).get();
+  Future<List<Noun>> nounsContaining(String text) => (select(nouns)
+        ..where((noun) =>
+            noun.translationsEN.contains(text) | noun.translationsDE.contains(text) | noun.bare.contains(text)))
+      .get();
 
   @visibleForTesting
-  Future<List<Adjective>> adjectivesContaining(String text) =>
-      (select(adjectives)..where((adjective) => adjective.bare.contains(text))).get();
+  Future<List<Adjective>> adjectivesContaining(String text) => (select(adjectives)
+        ..where((adjective) =>
+            adjective.translationsEN.contains(text) |
+            adjective.translationsDE.contains(text) |
+            adjective.bare.contains(text)))
+      .get();
 }
