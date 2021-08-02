@@ -1,22 +1,26 @@
 {
   "@@locale": "ru",
-  "appName": "[Яцццззииaaп Дёёслиипaaтооя]",
+  "appName": "[Яцццззииaaп Деэслиипaaтооя]",
   "@appName": {
     "description": "Name of the app"
   },
-  "homeScreenBottomBarHomeLabel": "[Ноомээ]",
+  "homeScreenBottomBarHomeLabel": "[Ноомее]",
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"
   },
-  "homeScreenBottomBarSettingsLabel": "[Зеёёёттиипгз]",
+  "homeScreenBottomBarSettingsLabel": "[Зеёээттиипгз]",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
+  },
+  "searchWordsHintText": "[Зёэёaaясн]",
+  "@searchWordsHintText": {
+    "description": "A hint text to display when searching for words"
   },
   "settingsTabDarkModeLabel": "[Дaaaaяк Моодее]",
   "@settingsTabDarkModeLabel": {
     "description": "A label for dark mode setting"
   },
-  "settingsTabLanguageLabel": "[Лaaпгццaaгёе]",
+  "settingsTabLanguageLabel": "[Лaaпгццaaгее]",
   "@settingsTabLanguageLabel": {
     "description": "A label for language setting"
   }

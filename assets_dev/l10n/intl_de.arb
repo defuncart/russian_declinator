@@ -4,6 +4,10 @@
   "@appName": {
     "description": "Name of the app"
   },
+  "searchWordsHintText": "Suchen",
+  "@searchWordsHintText": {
+    "description": "A hint text to display when searching for words"
+  },
   "homeScreenBottomBarHomeLabel": "Home",
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"

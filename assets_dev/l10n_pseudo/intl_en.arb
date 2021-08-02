@@ -12,6 +12,10 @@
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
   },
+  "searchWordsHintText": "Search",
+  "@searchWordsHintText": {
+    "description": "A hint text to display when searching for words"
+  },
   "settingsTabDarkModeLabel": "Dark Mode",
   "@settingsTabDarkModeLabel": {
     "description": "A label for dark mode setting"

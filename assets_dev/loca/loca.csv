@@ -1,5 +1,6 @@
 key;description;en;de;ru
 appName;Name of the app;Russian Declinator;Russisch Deklinator;Русский склонитель
+searchWordsHintText;A hint text to display when searching for words;Search;Suchen;
 homeScreenBottomBarHomeLabel;A label for the home bottom nav item;Home;;
 homeScreenBottomBarSettingsLabel;A label for the settings bottom nav item;Settings;;
 settingsTabDarkModeLabel;A label for dark mode setting;Dark Mode;;
