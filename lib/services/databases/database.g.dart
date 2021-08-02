@@ -7,10 +7,12 @@ part of 'database.dart';
 // **************************************************************************
 
 // ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
-class Noun extends DataClass implements Insertable<Noun> {
+class Noun extends DataClass implements Insertable<Noun>, Word {
   final int id;
   final String bare;
   final String accented;
+  final String translationsEN;
+  final String translationsDE;
   final Gender? gender;
   final bool isAnimate;
   final bool isIndeclinable;
@@ -32,6 +34,8 @@ class Noun extends DataClass implements Insertable<Noun> {
       {required this.id,
       required this.bare,
       required this.accented,
+      required this.translationsEN,
+      required this.translationsDE,
       this.gender,
       required this.isAnimate,
       required this.isIndeclinable,
@@ -59,6 +63,10 @@ class Noun extends DataClass implements Insertable<Noun> {
           .mapFromDatabaseResponse(data['${effectivePrefix}bare'])!,
       accented: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}accented'])!,
+      translationsEN: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}translations_e_n'])!,
+      translationsDE: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}translations_d_e'])!,
       gender: $NounsTable.$converter0.mapToDart(const IntType()
           .mapFromDatabaseResponse(data['${effectivePrefix}gender'])),
       isAnimate: const BoolType()
@@ -101,6 +109,8 @@ class Noun extends DataClass implements Insertable<Noun> {
     map['id'] = Variable<int>(id);
     map['bare'] = Variable<String>(bare);
     map['accented'] = Variable<String>(accented);
+    map['translations_e_n'] = Variable<String>(translationsEN);
+    map['translations_d_e'] = Variable<String>(translationsDE);
     if (!nullToAbsent || gender != null) {
       final converter = $NounsTable.$converter0;
       map['gender'] = Variable<int?>(converter.mapToSql(gender));
@@ -129,6 +139,8 @@ class Noun extends DataClass implements Insertable<Noun> {
       id: Value(id),
       bare: Value(bare),
       accented: Value(accented),
+      translationsEN: Value(translationsEN),
+      translationsDE: Value(translationsDE),
       gender:
           gender == null && nullToAbsent ? const Value.absent() : Value(gender),
       isAnimate: Value(isAnimate),
@@ -157,6 +169,8 @@ class Noun extends DataClass implements Insertable<Noun> {
       id: serializer.fromJson<int>(json['id']),
       bare: serializer.fromJson<String>(json['bare']),
       accented: serializer.fromJson<String>(json['accented']),
+      translationsEN: serializer.fromJson<String>(json['translationsEN']),
+      translationsDE: serializer.fromJson<String>(json['translationsDE']),
       gender: serializer.fromJson<Gender?>(json['gender']),
       isAnimate: serializer.fromJson<bool>(json['isAnimate']),
       isIndeclinable: serializer.fromJson<bool>(json['isIndeclinable']),
@@ -183,6 +197,8 @@ class Noun extends DataClass implements Insertable<Noun> {
       'id': serializer.toJson<int>(id),
       'bare': serializer.toJson<String>(bare),
       'accented': serializer.toJson<String>(accented),
+      'translationsEN': serializer.toJson<String>(translationsEN),
+      'translationsDE': serializer.toJson<String>(translationsDE),
       'gender': serializer.toJson<Gender?>(gender),
       'isAnimate': serializer.toJson<bool>(isAnimate),
       'isIndeclinable': serializer.toJson<bool>(isIndeclinable),
@@ -207,6 +223,8 @@ class Noun extends DataClass implements Insertable<Noun> {
           {int? id,
           String? bare,
           String? accented,
+          String? translationsEN,
+          String? translationsDE,
           Gender? gender,
           bool? isAnimate,
           bool? isIndeclinable,
@@ -228,6 +246,8 @@ class Noun extends DataClass implements Insertable<Noun> {
         id: id ?? this.id,
         bare: bare ?? this.bare,
         accented: accented ?? this.accented,
+        translationsEN: translationsEN ?? this.translationsEN,
+        translationsDE: translationsDE ?? this.translationsDE,
         gender: gender ?? this.gender,
         isAnimate: isAnimate ?? this.isAnimate,
         isIndeclinable: isIndeclinable ?? this.isIndeclinable,
@@ -252,6 +272,8 @@ class Noun extends DataClass implements Insertable<Noun> {
           ..write('id: $id, ')
           ..write('bare: $bare, ')
           ..write('accented: $accented, ')
+          ..write('translationsEN: $translationsEN, ')
+          ..write('translationsDE: $translationsDE, ')
           ..write('gender: $gender, ')
           ..write('isAnimate: $isAnimate, ')
           ..write('isIndeclinable: $isIndeclinable, ')
@@ -281,41 +303,41 @@ class Noun extends DataClass implements Insertable<Noun> {
           $mrjc(
               accented.hashCode,
               $mrjc(
-                  gender.hashCode,
+                  translationsEN.hashCode,
                   $mrjc(
-                      isAnimate.hashCode,
+                      translationsDE.hashCode,
                       $mrjc(
-                          isIndeclinable.hashCode,
+                          gender.hashCode,
                           $mrjc(
-                              isSingular.hashCode,
+                              isAnimate.hashCode,
                               $mrjc(
-                                  isPlural.hashCode,
+                                  isIndeclinable.hashCode,
                                   $mrjc(
-                                      sgNom.hashCode,
+                                      isSingular.hashCode,
                                       $mrjc(
-                                          sgGen.hashCode,
+                                          isPlural.hashCode,
                                           $mrjc(
-                                              sgDat.hashCode,
+                                              sgNom.hashCode,
                                               $mrjc(
-                                                  sgAcc.hashCode,
+                                                  sgGen.hashCode,
                                                   $mrjc(
-                                                      sgInst.hashCode,
+                                                      sgDat.hashCode,
                                                       $mrjc(
-                                                          sgPrep.hashCode,
+                                                          sgAcc.hashCode,
                                                           $mrjc(
-                                                              plNom.hashCode,
+                                                              sgInst.hashCode,
                                                               $mrjc(
-                                                                  plGen
+                                                                  sgPrep
                                                                       .hashCode,
                                                                   $mrjc(
-                                                                      plDat
+                                                                      plNom
                                                                           .hashCode,
                                                                       $mrjc(
-                                                                          plAcc
+                                                                          plGen
                                                                               .hashCode,
                                                                           $mrjc(
-                                                                              plInst.hashCode,
-                                                                              plPrep.hashCode))))))))))))))))))));
+                                                                              plDat.hashCode,
+                                                                              $mrjc(plAcc.hashCode, $mrjc(plInst.hashCode, plPrep.hashCode))))))))))))))))))))));
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -323,6 +345,8 @@ class Noun extends DataClass implements Insertable<Noun> {
           other.id == this.id &&
           other.bare == this.bare &&
           other.accented == this.accented &&
+          other.translationsEN == this.translationsEN &&
+          other.translationsDE == this.translationsDE &&
           other.gender == this.gender &&
           other.isAnimate == this.isAnimate &&
           other.isIndeclinable == this.isIndeclinable &&
@@ -346,6 +370,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
   final Value<int> id;
   final Value<String> bare;
   final Value<String> accented;
+  final Value<String> translationsEN;
+  final Value<String> translationsDE;
   final Value<Gender?> gender;
   final Value<bool> isAnimate;
   final Value<bool> isIndeclinable;
@@ -367,6 +393,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     this.id = const Value.absent(),
     this.bare = const Value.absent(),
     this.accented = const Value.absent(),
+    this.translationsEN = const Value.absent(),
+    this.translationsDE = const Value.absent(),
     this.gender = const Value.absent(),
     this.isAnimate = const Value.absent(),
     this.isIndeclinable = const Value.absent(),
@@ -389,6 +417,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     this.id = const Value.absent(),
     required String bare,
     required String accented,
+    required String translationsEN,
+    required String translationsDE,
     this.gender = const Value.absent(),
     required bool isAnimate,
     required bool isIndeclinable,
@@ -408,6 +438,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     required String plPrep,
   })  : bare = Value(bare),
         accented = Value(accented),
+        translationsEN = Value(translationsEN),
+        translationsDE = Value(translationsDE),
         isAnimate = Value(isAnimate),
         isIndeclinable = Value(isIndeclinable),
         isSingular = Value(isSingular),
@@ -428,6 +460,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     Expression<int>? id,
     Expression<String>? bare,
     Expression<String>? accented,
+    Expression<String>? translationsEN,
+    Expression<String>? translationsDE,
     Expression<Gender?>? gender,
     Expression<bool>? isAnimate,
     Expression<bool>? isIndeclinable,
@@ -450,6 +484,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       if (id != null) 'id': id,
       if (bare != null) 'bare': bare,
       if (accented != null) 'accented': accented,
+      if (translationsEN != null) 'translations_e_n': translationsEN,
+      if (translationsDE != null) 'translations_d_e': translationsDE,
       if (gender != null) 'gender': gender,
       if (isAnimate != null) 'is_animate': isAnimate,
       if (isIndeclinable != null) 'is_indeclinable': isIndeclinable,
@@ -474,6 +510,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       {Value<int>? id,
       Value<String>? bare,
       Value<String>? accented,
+      Value<String>? translationsEN,
+      Value<String>? translationsDE,
       Value<Gender?>? gender,
       Value<bool>? isAnimate,
       Value<bool>? isIndeclinable,
@@ -495,6 +533,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
       id: id ?? this.id,
       bare: bare ?? this.bare,
       accented: accented ?? this.accented,
+      translationsEN: translationsEN ?? this.translationsEN,
+      translationsDE: translationsDE ?? this.translationsDE,
       gender: gender ?? this.gender,
       isAnimate: isAnimate ?? this.isAnimate,
       isIndeclinable: isIndeclinable ?? this.isIndeclinable,
@@ -526,6 +566,12 @@ class NounsCompanion extends UpdateCompanion<Noun> {
     }
     if (accented.present) {
       map['accented'] = Variable<String>(accented.value);
+    }
+    if (translationsEN.present) {
+      map['translations_e_n'] = Variable<String>(translationsEN.value);
+    }
+    if (translationsDE.present) {
+      map['translations_d_e'] = Variable<String>(translationsDE.value);
     }
     if (gender.present) {
       final converter = $NounsTable.$converter0;
@@ -588,6 +634,8 @@ class NounsCompanion extends UpdateCompanion<Noun> {
           ..write('id: $id, ')
           ..write('bare: $bare, ')
           ..write('accented: $accented, ')
+          ..write('translationsEN: $translationsEN, ')
+          ..write('translationsDE: $translationsDE, ')
           ..write('gender: $gender, ')
           ..write('isAnimate: $isAnimate, ')
           ..write('isIndeclinable: $isIndeclinable, ')
@@ -627,6 +675,16 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
   final VerificationMeta _accentedMeta = const VerificationMeta('accented');
   late final GeneratedColumn<String?> accented = GeneratedColumn<String?>(
       'accented', aliasedName, false,
+      typeName: 'TEXT', requiredDuringInsert: true);
+  final VerificationMeta _translationsENMeta =
+      const VerificationMeta('translationsEN');
+  late final GeneratedColumn<String?> translationsEN = GeneratedColumn<String?>(
+      'translations_e_n', aliasedName, false,
+      typeName: 'TEXT', requiredDuringInsert: true);
+  final VerificationMeta _translationsDEMeta =
+      const VerificationMeta('translationsDE');
+  late final GeneratedColumn<String?> translationsDE = GeneratedColumn<String?>(
+      'translations_d_e', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
   final VerificationMeta _genderMeta = const VerificationMeta('gender');
   late final GeneratedColumnWithTypeConverter<Gender, int?> gender =
@@ -711,6 +769,8 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
         id,
         bare,
         accented,
+        translationsEN,
+        translationsDE,
         gender,
         isAnimate,
         isIndeclinable,
@@ -752,6 +812,22 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
           accented.isAcceptableOrUnknown(data['accented']!, _accentedMeta));
     } else if (isInserting) {
       context.missing(_accentedMeta);
+    }
+    if (data.containsKey('translations_e_n')) {
+      context.handle(
+          _translationsENMeta,
+          translationsEN.isAcceptableOrUnknown(
+              data['translations_e_n']!, _translationsENMeta));
+    } else if (isInserting) {
+      context.missing(_translationsENMeta);
+    }
+    if (data.containsKey('translations_d_e')) {
+      context.handle(
+          _translationsDEMeta,
+          translationsDE.isAcceptableOrUnknown(
+              data['translations_d_e']!, _translationsDEMeta));
+    } else if (isInserting) {
+      context.missing(_translationsDEMeta);
     }
     context.handle(_genderMeta, const VerificationResult.success());
     if (data.containsKey('is_animate')) {
@@ -873,10 +949,12 @@ class $NounsTable extends Nouns with TableInfo<$NounsTable, Noun> {
   static TypeConverter<Gender, int> $converter0 = const GenderConverter();
 }
 
-class Adjective extends DataClass implements Insertable<Adjective> {
+class Adjective extends DataClass implements Insertable<Adjective>, Word {
   final int id;
   final String bare;
   final String accented;
+  final String translationsEN;
+  final String translationsDE;
   final String mNom;
   final String mGen;
   final String mDat;
@@ -905,6 +983,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
       {required this.id,
       required this.bare,
       required this.accented,
+      required this.translationsEN,
+      required this.translationsDE,
       required this.mNom,
       required this.mGen,
       required this.mDat,
@@ -939,6 +1019,10 @@ class Adjective extends DataClass implements Insertable<Adjective> {
           .mapFromDatabaseResponse(data['${effectivePrefix}bare'])!,
       accented: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}accented'])!,
+      translationsEN: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}translations_e_n'])!,
+      translationsDE: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}translations_d_e'])!,
       mNom: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}m_nom'])!,
       mGen: const StringType()
@@ -995,6 +1079,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
     map['id'] = Variable<int>(id);
     map['bare'] = Variable<String>(bare);
     map['accented'] = Variable<String>(accented);
+    map['translations_e_n'] = Variable<String>(translationsEN);
+    map['translations_d_e'] = Variable<String>(translationsDE);
     map['m_nom'] = Variable<String>(mNom);
     map['m_gen'] = Variable<String>(mGen);
     map['m_dat'] = Variable<String>(mDat);
@@ -1027,6 +1113,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
       id: Value(id),
       bare: Value(bare),
       accented: Value(accented),
+      translationsEN: Value(translationsEN),
+      translationsDE: Value(translationsDE),
       mNom: Value(mNom),
       mGen: Value(mGen),
       mDat: Value(mDat),
@@ -1061,6 +1149,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
       id: serializer.fromJson<int>(json['id']),
       bare: serializer.fromJson<String>(json['bare']),
       accented: serializer.fromJson<String>(json['accented']),
+      translationsEN: serializer.fromJson<String>(json['translationsEN']),
+      translationsDE: serializer.fromJson<String>(json['translationsDE']),
       mNom: serializer.fromJson<String>(json['mNom']),
       mGen: serializer.fromJson<String>(json['mGen']),
       mDat: serializer.fromJson<String>(json['mDat']),
@@ -1094,6 +1184,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
       'id': serializer.toJson<int>(id),
       'bare': serializer.toJson<String>(bare),
       'accented': serializer.toJson<String>(accented),
+      'translationsEN': serializer.toJson<String>(translationsEN),
+      'translationsDE': serializer.toJson<String>(translationsDE),
       'mNom': serializer.toJson<String>(mNom),
       'mGen': serializer.toJson<String>(mGen),
       'mDat': serializer.toJson<String>(mDat),
@@ -1125,6 +1217,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
           {int? id,
           String? bare,
           String? accented,
+          String? translationsEN,
+          String? translationsDE,
           String? mNom,
           String? mGen,
           String? mDat,
@@ -1153,6 +1247,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
         id: id ?? this.id,
         bare: bare ?? this.bare,
         accented: accented ?? this.accented,
+        translationsEN: translationsEN ?? this.translationsEN,
+        translationsDE: translationsDE ?? this.translationsDE,
         mNom: mNom ?? this.mNom,
         mGen: mGen ?? this.mGen,
         mDat: mDat ?? this.mDat,
@@ -1184,6 +1280,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
           ..write('id: $id, ')
           ..write('bare: $bare, ')
           ..write('accented: $accented, ')
+          ..write('translationsEN: $translationsEN, ')
+          ..write('translationsDE: $translationsDE, ')
           ..write('mNom: $mNom, ')
           ..write('mGen: $mGen, ')
           ..write('mDat: $mDat, ')
@@ -1220,40 +1318,41 @@ class Adjective extends DataClass implements Insertable<Adjective> {
           $mrjc(
               accented.hashCode,
               $mrjc(
-                  mNom.hashCode,
+                  translationsEN.hashCode,
                   $mrjc(
-                      mGen.hashCode,
+                      translationsDE.hashCode,
                       $mrjc(
-                          mDat.hashCode,
+                          mNom.hashCode,
                           $mrjc(
-                              mAcc.hashCode,
+                              mGen.hashCode,
                               $mrjc(
-                                  mInst.hashCode,
+                                  mDat.hashCode,
                                   $mrjc(
-                                      mPrep.hashCode,
+                                      mAcc.hashCode,
                                       $mrjc(
-                                          fNom.hashCode,
+                                          mInst.hashCode,
                                           $mrjc(
-                                              fGen.hashCode,
+                                              mPrep.hashCode,
                                               $mrjc(
-                                                  fDat.hashCode,
+                                                  fNom.hashCode,
                                                   $mrjc(
-                                                      fAcc.hashCode,
+                                                      fGen.hashCode,
                                                       $mrjc(
-                                                          fInst.hashCode,
+                                                          fDat.hashCode,
                                                           $mrjc(
-                                                              fPrep.hashCode,
+                                                              fAcc.hashCode,
                                                               $mrjc(
-                                                                  nNom.hashCode,
+                                                                  fInst
+                                                                      .hashCode,
                                                                   $mrjc(
-                                                                      nGen
+                                                                      fPrep
                                                                           .hashCode,
                                                                       $mrjc(
-                                                                          nDat
+                                                                          nNom
                                                                               .hashCode,
                                                                           $mrjc(
-                                                                              nAcc.hashCode,
-                                                                              $mrjc(nInst.hashCode, $mrjc(nPrep.hashCode, $mrjc(plNom.hashCode, $mrjc(plGen.hashCode, $mrjc(plDat.hashCode, $mrjc(plAcc.hashCode, $mrjc(plInst.hashCode, plPrep.hashCode)))))))))))))))))))))))))));
+                                                                              nGen.hashCode,
+                                                                              $mrjc(nDat.hashCode, $mrjc(nAcc.hashCode, $mrjc(nInst.hashCode, $mrjc(nPrep.hashCode, $mrjc(plNom.hashCode, $mrjc(plGen.hashCode, $mrjc(plDat.hashCode, $mrjc(plAcc.hashCode, $mrjc(plInst.hashCode, plPrep.hashCode)))))))))))))))))))))))))))));
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -1261,6 +1360,8 @@ class Adjective extends DataClass implements Insertable<Adjective> {
           other.id == this.id &&
           other.bare == this.bare &&
           other.accented == this.accented &&
+          other.translationsEN == this.translationsEN &&
+          other.translationsDE == this.translationsDE &&
           other.mNom == this.mNom &&
           other.mGen == this.mGen &&
           other.mDat == this.mDat &&
@@ -1291,6 +1392,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
   final Value<int> id;
   final Value<String> bare;
   final Value<String> accented;
+  final Value<String> translationsEN;
+  final Value<String> translationsDE;
   final Value<String> mNom;
   final Value<String> mGen;
   final Value<String> mDat;
@@ -1319,6 +1422,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
     this.id = const Value.absent(),
     this.bare = const Value.absent(),
     this.accented = const Value.absent(),
+    this.translationsEN = const Value.absent(),
+    this.translationsDE = const Value.absent(),
     this.mNom = const Value.absent(),
     this.mGen = const Value.absent(),
     this.mDat = const Value.absent(),
@@ -1348,6 +1453,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
     this.id = const Value.absent(),
     required String bare,
     required String accented,
+    required String translationsEN,
+    required String translationsDE,
     required String mNom,
     required String mGen,
     required String mDat,
@@ -1374,6 +1481,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
     required String plPrep,
   })  : bare = Value(bare),
         accented = Value(accented),
+        translationsEN = Value(translationsEN),
+        translationsDE = Value(translationsDE),
         mNom = Value(mNom),
         mGen = Value(mGen),
         mDat = Value(mDat),
@@ -1402,6 +1511,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
     Expression<int>? id,
     Expression<String>? bare,
     Expression<String>? accented,
+    Expression<String>? translationsEN,
+    Expression<String>? translationsDE,
     Expression<String>? mNom,
     Expression<String>? mGen,
     Expression<String>? mDat,
@@ -1431,6 +1542,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
       if (id != null) 'id': id,
       if (bare != null) 'bare': bare,
       if (accented != null) 'accented': accented,
+      if (translationsEN != null) 'translations_e_n': translationsEN,
+      if (translationsDE != null) 'translations_d_e': translationsDE,
       if (mNom != null) 'm_nom': mNom,
       if (mGen != null) 'm_gen': mGen,
       if (mDat != null) 'm_dat': mDat,
@@ -1462,6 +1575,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
       {Value<int>? id,
       Value<String>? bare,
       Value<String>? accented,
+      Value<String>? translationsEN,
+      Value<String>? translationsDE,
       Value<String>? mNom,
       Value<String>? mGen,
       Value<String>? mDat,
@@ -1490,6 +1605,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
       id: id ?? this.id,
       bare: bare ?? this.bare,
       accented: accented ?? this.accented,
+      translationsEN: translationsEN ?? this.translationsEN,
+      translationsDE: translationsDE ?? this.translationsDE,
       mNom: mNom ?? this.mNom,
       mGen: mGen ?? this.mGen,
       mDat: mDat ?? this.mDat,
@@ -1528,6 +1645,12 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
     }
     if (accented.present) {
       map['accented'] = Variable<String>(accented.value);
+    }
+    if (translationsEN.present) {
+      map['translations_e_n'] = Variable<String>(translationsEN.value);
+    }
+    if (translationsDE.present) {
+      map['translations_d_e'] = Variable<String>(translationsDE.value);
     }
     if (mNom.present) {
       map['m_nom'] = Variable<String>(mNom.value);
@@ -1610,6 +1733,8 @@ class AdjectivesCompanion extends UpdateCompanion<Adjective> {
           ..write('id: $id, ')
           ..write('bare: $bare, ')
           ..write('accented: $accented, ')
+          ..write('translationsEN: $translationsEN, ')
+          ..write('translationsDE: $translationsDE, ')
           ..write('mNom: $mNom, ')
           ..write('mGen: $mGen, ')
           ..write('mDat: $mDat, ')
@@ -1657,6 +1782,16 @@ class $AdjectivesTable extends Adjectives
   final VerificationMeta _accentedMeta = const VerificationMeta('accented');
   late final GeneratedColumn<String?> accented = GeneratedColumn<String?>(
       'accented', aliasedName, false,
+      typeName: 'TEXT', requiredDuringInsert: true);
+  final VerificationMeta _translationsENMeta =
+      const VerificationMeta('translationsEN');
+  late final GeneratedColumn<String?> translationsEN = GeneratedColumn<String?>(
+      'translations_e_n', aliasedName, false,
+      typeName: 'TEXT', requiredDuringInsert: true);
+  final VerificationMeta _translationsDEMeta =
+      const VerificationMeta('translationsDE');
+  late final GeneratedColumn<String?> translationsDE = GeneratedColumn<String?>(
+      'translations_d_e', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
   final VerificationMeta _mNomMeta = const VerificationMeta('mNom');
   late final GeneratedColumn<String?> mNom = GeneratedColumn<String?>(
@@ -1759,6 +1894,8 @@ class $AdjectivesTable extends Adjectives
         id,
         bare,
         accented,
+        translationsEN,
+        translationsDE,
         mNom,
         mGen,
         mDat,
@@ -1807,6 +1944,22 @@ class $AdjectivesTable extends Adjectives
           accented.isAcceptableOrUnknown(data['accented']!, _accentedMeta));
     } else if (isInserting) {
       context.missing(_accentedMeta);
+    }
+    if (data.containsKey('translations_e_n')) {
+      context.handle(
+          _translationsENMeta,
+          translationsEN.isAcceptableOrUnknown(
+              data['translations_e_n']!, _translationsENMeta));
+    } else if (isInserting) {
+      context.missing(_translationsENMeta);
+    }
+    if (data.containsKey('translations_d_e')) {
+      context.handle(
+          _translationsDEMeta,
+          translationsDE.isAcceptableOrUnknown(
+              data['translations_d_e']!, _translationsDEMeta));
+    } else if (isInserting) {
+      context.missing(_translationsDEMeta);
     }
     if (data.containsKey('m_nom')) {
       context.handle(

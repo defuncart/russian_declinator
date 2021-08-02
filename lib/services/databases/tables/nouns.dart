@@ -6,8 +6,8 @@ class Nouns extends Table {
 
   TextColumn get bare => text()();
   TextColumn get accented => text()();
-  // TextColumn get translationsEN => text()();
-  // TextColumn get translationsDE => text()();
+  TextColumn get translationsEN => text()();
+  TextColumn get translationsDE => text()();
   IntColumn get gender => integer().nullable().map(const GenderConverter())();
   // partner
   BoolColumn get isAnimate => boolean()();

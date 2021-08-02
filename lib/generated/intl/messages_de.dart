@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("[Höömee]"),
         "homeScreenBottomBarSettingsLabel":
             MessageLookupByLibrary.simpleMessage("[Seeeettiings]"),
+        "searchWordsHintText":
+            MessageLookupByLibrary.simpleMessage("[Seeeaarch]"),
         "settingsTabDarkModeLabel":
             MessageLookupByLibrary.simpleMessage("[Daaaark Möödee]"),
         "settingsTabLanguageLabel":

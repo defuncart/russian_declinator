@@ -5,8 +5,8 @@ class Adjectives extends Table {
 
   TextColumn get bare => text()();
   TextColumn get accented => text()();
-  // TextColumn get translationsEN => text()();
-  // TextColumn get translationsDE => text()();
+  TextColumn get translationsEN => text()();
+  TextColumn get translationsDE => text()();
   // comparative
 // superlative
 // short_m

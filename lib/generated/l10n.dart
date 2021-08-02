@@ -81,6 +81,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Search`
+  String get searchWordsHintText {
+    return Intl.message(
+      'Search',
+      name: 'searchWordsHintText',
+      desc: 'A hint text to display when searching for words',
+      args: [],
+    );
+  }
+
   /// `Dark Mode`
   String get settingsTabDarkModeLabel {
     return Intl.message(
