@@ -33,6 +33,7 @@ extension AdjectiveExtensions on Adjective {
   String declension({
     required AdjectiveForm form,
     required Case declenionCase,
+    bool isAnimate = false,
   }) {
     switch (form) {
       case AdjectiveForm.masc:
@@ -44,7 +45,7 @@ extension AdjectiveExtensions on Adjective {
           case Case.dative:
             return mDat;
           case Case.accusative:
-            return mAcc;
+            return isAnimate ? mGen : mNom;
           case Case.instrumental:
             return mInst;
           case Case.prepositional:
@@ -59,7 +60,7 @@ extension AdjectiveExtensions on Adjective {
           case Case.dative:
             return fDat;
           case Case.accusative:
-            return fAcc;
+            return isAnimate ? fGen : fNom;
           case Case.instrumental:
             return fInst;
           case Case.prepositional:
@@ -74,7 +75,7 @@ extension AdjectiveExtensions on Adjective {
           case Case.dative:
             return nDat;
           case Case.accusative:
-            return nAcc;
+            return isAnimate ? nGen : nNom;
           case Case.instrumental:
             return nInst;
           case Case.prepositional:
@@ -89,7 +90,7 @@ extension AdjectiveExtensions on Adjective {
           case Case.dative:
             return plDat;
           case Case.accusative:
-            return plAcc;
+            return isAnimate ? plGen : plNom;
           case Case.instrumental:
             return plInst;
           case Case.prepositional:

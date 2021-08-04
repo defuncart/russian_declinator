@@ -165,11 +165,15 @@ class GameService {
 
     final AdjectiveForm adjectiveForm = AdjectiveForm.values.randomElement;
     final Case selectedCase = settings.cases.randomElement;
-
-    // deal with animate, inanimate case
+    final needToConsiderIsAnimate = selectedCase == Case.accusative;
+    final isAnimate = needToConsiderIsAnimate ? _random.nextBool() : false;
 
     final declensions = adjective.allDeclensions.toSet().toList();
-    final selectedDeclension = adjective.declension(form: adjectiveForm, declenionCase: selectedCase);
+    final selectedDeclension = adjective.declension(
+      form: adjectiveForm,
+      declenionCase: selectedCase,
+      isAnimate: isAnimate,
+    );
     final selectedDeclensionIndex = declensions.indexOf(selectedDeclension);
 
     var answerIndeces = determineAnswerIndeces(
@@ -183,7 +187,13 @@ class GameService {
 
     _currentQuestion = adjective.accented;
 
-    _currentInfo = selectedCase.localized + ' ' + adjectiveForm.localized;
+    final animateText = needToConsiderIsAnimate
+        ? isAnimate
+            ? AppLocalizations.current.generalAnimate
+            : AppLocalizations.current.generalNotAnimate
+        : '';
+    _currentInfo =
+        selectedCase.localized + ' ' + adjectiveForm.localized + (needToConsiderIsAnimate ? ' ' + animateText : '');
   }
 
   @visibleForTesting
