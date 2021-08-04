@@ -1,0 +1,4 @@
+enum NounForm {
+  singular,
+  plural,
+}
