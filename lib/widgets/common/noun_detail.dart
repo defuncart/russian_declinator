@@ -4,6 +4,7 @@ import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/enums/case.dart';
 import 'package:russian_declinator/extensions/case_extensions.dart';
 import 'package:russian_declinator/services/databases/database.dart' show Noun;
+import 'package:russian_declinator/widgets/common/word_with_stress.dart';
 
 class NounDetail extends StatelessWidget {
   const NounDetail({
@@ -60,13 +61,13 @@ class NounRow extends StatelessWidget {
       children: [
         Text(declensionCase.localized),
         Expanded(
-          child: Text(
+          child: WordWithStress(
             noun.singularForCase(declensionCase),
             textAlign: TextAlign.center,
           ),
         ),
         Expanded(
-          child: Text(
+          child: WordWithStress(
             noun.pluralForCase(declensionCase),
             textAlign: TextAlign.center,
           ),

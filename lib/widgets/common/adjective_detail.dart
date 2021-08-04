@@ -4,6 +4,7 @@ import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/enums/case.dart';
 import 'package:russian_declinator/extensions/case_extensions.dart';
 import 'package:russian_declinator/services/databases/database.dart' show Adjective;
+import 'package:russian_declinator/widgets/common/word_with_stress.dart';
 
 class AdjectiveDetail extends StatelessWidget {
   const AdjectiveDetail({
@@ -100,7 +101,7 @@ class AdjectiveColumn extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          for (final f in adjective.form(form)) Text(f),
+          for (final f in adjective.form(form)) WordWithStress(f),
         ],
       );
 }
