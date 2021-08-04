@@ -113,12 +113,24 @@ class GameService {
 
   void _determineNounRound() {
     final noun = _nouns![_questionIndeces[_currentIndex]];
-    final isPlural = _random.nextBool();
+
+    bool isPlural;
+    if (noun.isSingular) {
+      isPlural = false;
+    } else if (noun.isPlural) {
+      isPlural = true;
+    } else {
+      isPlural = _random.nextBool();
+    }
+
     _currentQuestion = noun.accented;
+
     final Case selectedCase = cases.randomElement;
+
     _currentInfo = selectedCase.localized +
         ' ' +
         (isPlural ? AppLocalizations.current.generalPlural : AppLocalizations.current.generalSingular);
+
     var declensions = noun.allDeclensions;
     var selectedDeclensionIndex = Case.values.indexOf(selectedCase) + (isPlural ? Case.values.length : 0);
     final selectedDeclension = declensions[selectedDeclensionIndex];
