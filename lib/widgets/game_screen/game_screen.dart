@@ -15,21 +15,21 @@ class GameScreen extends StatefulWidget {
 
 class _GameScreenState extends State<GameScreen> {
   var _isLoaded = false;
-  final _gameService = GameService(
-    settings: const GameSettings(
-      type: GameType.adjective,
-    ),
-  );
+  late GameService _gameService;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
 
     _init();
   }
 
   Future<void> _init() async {
+    final settings = ModalRoute.of(context)!.settings.arguments as GameSettings;
+
+    _gameService = GameService(settings: settings);
     await _gameService.init();
+
     setState(() => _isLoaded = true);
   }
 

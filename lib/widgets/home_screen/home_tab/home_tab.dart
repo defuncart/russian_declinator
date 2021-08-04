@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/generated/l10n.dart';
 import 'package:russian_declinator/services/databases/models/word.dart';
+import 'package:russian_declinator/services/game/game_service.dart';
 import 'package:russian_declinator/widgets/common/adjective_detail.dart';
 import 'package:russian_declinator/widgets/common/noun_detail.dart';
 import 'package:russian_declinator/widgets/game_screen/game_screen.dart';
@@ -27,8 +28,18 @@ class HomeTab extends StatelessWidget {
             },
           ),
           ElevatedButton(
-            child: const Text('Noun Multiple Choice'),
-            onPressed: () => Navigator.of(context).pushNamed(GameScreen.routeName),
+            child: const Text('Nouns Multiple Choice'),
+            onPressed: () => Navigator.of(context).pushNamed(
+              GameScreen.routeName,
+              arguments: const GameSettings(type: GameType.noun),
+            ),
+          ),
+          ElevatedButton(
+            child: const Text('Adjectives Multiple Choice'),
+            onPressed: () => Navigator.of(context).pushNamed(
+              GameScreen.routeName,
+              arguments: const GameSettings(type: GameType.adjective),
+            ),
           ),
         ],
       ),
