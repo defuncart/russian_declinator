@@ -4,6 +4,7 @@ import 'package:russian_declinator/generated/l10n.dart';
 import 'package:russian_declinator/services/databases/models/word.dart';
 import 'package:russian_declinator/widgets/common/adjective_detail.dart';
 import 'package:russian_declinator/widgets/common/noun_detail.dart';
+import 'package:russian_declinator/widgets/game_screen/game_screen.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -11,16 +12,29 @@ class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ElevatedButton(
-        child: const Text('Search'),
-        onPressed: () async {
-          await showSearch<Word?>(
-            context: context,
-            delegate: WordSearchDelegate(
-              hintText: AppLocalizations.of(context).searchWordsHintText,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(
+            child: const Text('Search'),
+            onPressed: () async {
+              await showSearch<Word?>(
+                context: context,
+                delegate: WordSearchDelegate(
+                  hintText: AppLocalizations.of(context).searchWordsHintText,
+                ),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Noun Multiple Choice'),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const GameScreen(),
+              ),
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }
