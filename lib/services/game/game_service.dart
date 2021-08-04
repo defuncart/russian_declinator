@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/enums/adjective_form.dart';
 import 'package:russian_declinator/enums/case.dart';
+import 'package:russian_declinator/enums/noun_form.dart';
 import 'package:russian_declinator/extensions/adjective_extensions.dart';
 import 'package:russian_declinator/extensions/adjective_form_extensions.dart';
 import 'package:russian_declinator/extensions/case_extensions.dart';
@@ -140,11 +141,12 @@ class GameService {
 
     final Case selectedCase = settings.cases.randomElement;
 
-    var declensions = noun.allDeclensions;
-    var selectedDeclensionIndex = Case.values.indexOf(selectedCase) + (isPlural ? Case.values.length : 0);
-    final selectedDeclension = declensions[selectedDeclensionIndex];
-    declensions = declensions.toSet().toList();
-    selectedDeclensionIndex = declensions.indexOf(selectedDeclension);
+    var declensions = noun.allDeclensions.toSet().toList();
+    final selectedDeclension = noun.declension(
+      form: isPlural ? NounForm.plural : NounForm.singular,
+      declenionCase: selectedCase,
+    );
+    final selectedDeclensionIndex = declensions.indexOf(selectedDeclension);
 
     var answerIndeces = determineAnswerIndeces(
       totalAnswers: 4,
