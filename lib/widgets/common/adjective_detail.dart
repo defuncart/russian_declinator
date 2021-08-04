@@ -25,7 +25,7 @@ class AdjectiveDetail extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(adjective.bare),
+              WordWithStress(adjective.accented),
               const SizedBox(height: 8),
               if (language == 'en') ...[
                 Text(adjective.translationsEN),

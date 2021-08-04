@@ -25,7 +25,7 @@ class NounDetail extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(noun.bare),
+              WordWithStress(noun.accented),
               const SizedBox(height: 8),
               if (language == 'en') ...[
                 Text(noun.translationsEN),
