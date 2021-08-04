@@ -41,6 +41,13 @@ class HomeTab extends StatelessWidget {
               arguments: const GameSettings(type: GameType.adjective),
             ),
           ),
+          ElevatedButton(
+            child: const Text('Adjectives + Nouns Multiple Choice'),
+            onPressed: () => Navigator.of(context).pushNamed(
+              GameScreen.routeName,
+              arguments: const GameSettings(type: GameType.adjectiveNoun),
+            ),
+          ),
         ],
       ),
     );

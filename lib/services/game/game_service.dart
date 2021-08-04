@@ -121,6 +121,12 @@ class GameService {
         _determineAdjectiveRound();
         break;
       case GameType.adjectiveNoun:
+        assert(_nouns != null);
+        assert(_nouns?.length == settings.numberQuestions);
+        assert(_adjectives != null);
+        assert(_adjectives?.length == settings.numberQuestions);
+
+        _determineAdjectiveNounRound();
         break;
     }
 
@@ -141,7 +147,7 @@ class GameService {
 
     final Case selectedCase = settings.cases.randomElement;
 
-    var declensions = noun.allDeclensions.toSet().toList();
+    final declensions = noun.allDeclensions.toSet().toList();
     final selectedDeclension = noun.declension(
       form: isPlural ? NounForm.plural : NounForm.singular,
       declenionCase: selectedCase,
@@ -196,6 +202,46 @@ class GameService {
         : '';
     _currentInfo =
         selectedCase.localized + ' ' + adjectiveForm.localized + (needToConsiderIsAnimate ? ' ' + animateText : '');
+  }
+
+  void _determineAdjectiveNounRound() {
+    final noun = _nouns![_questionIndeces[_currentIndex]];
+    final adjective = _adjectives![_questionIndeces[_currentIndex]];
+
+    // final AdjectiveForm adjectiveForm = AdjectiveForm.values.randomElement;
+    AdjectiveForm adjectiveForm;
+    do {
+      adjectiveForm = AdjectiveForm.values.randomElement;
+    } while ((noun.isSingular && adjectiveForm.isPlural) || (noun.isPlural && adjectiveForm.isSingular));
+    final Case selectedCase = settings.cases.randomElement;
+
+    final nounDeclensions = noun.allDeclensions.toSet().toList();
+    final nounSelectedDeclension = noun.declension(
+      form: noun.isPlural ? NounForm.plural : NounForm.singular,
+      declenionCase: selectedCase,
+    );
+
+    final adjectiveDeclensions = adjective.allDeclensions.toSet().toList();
+    final adjectiveSelectedDeclension = adjective.declension(
+      form: adjectiveForm,
+      declenionCase: selectedCase,
+      isAnimate: noun.isAnimate,
+    );
+
+    _currentAnswers = [];
+    _currentAnswers.add('$adjectiveSelectedDeclension $nounSelectedDeclension');
+    nounDeclensions.remove(nounSelectedDeclension);
+    adjectiveDeclensions.remove(adjectiveSelectedDeclension);
+    for (var i = 0; i < 3; i++) {
+      _currentAnswers.add(
+        '${adjectiveDeclensions.randomElement} ${nounDeclensions.randomElement}',
+      );
+    }
+    _currentAnswers.shuffle();
+    _correctAnswerIndex = _currentAnswers.indexOf('$adjectiveSelectedDeclension $nounSelectedDeclension');
+
+    _currentQuestion = '${adjective.accented} ${noun.accented}';
+    _currentInfo = selectedCase.localized + ' ' + adjectiveForm.localized;
   }
 
   @visibleForTesting

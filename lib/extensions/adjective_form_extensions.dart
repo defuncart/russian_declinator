@@ -14,4 +14,8 @@ extension AdjectiveFormExtensions on AdjectiveForm {
         return AppLocalizations.current.generalPlural;
     }
   }
+
+  bool get isPlural => this == AdjectiveForm.plural;
+
+  bool get isSingular => this == AdjectiveForm.masc || this == AdjectiveForm.fem || this == AdjectiveForm.neu;
 }
