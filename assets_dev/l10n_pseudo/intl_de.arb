@@ -4,6 +4,54 @@
   "@appName": {
     "description": "Name of the app"
   },
+  "generalAccusative": "[ÄÄccüüsaatiivee]",
+  "@generalAccusative": {
+    "description": "Accusative case"
+  },
+  "generalAccusativeShort": "[ÄÄÄcc]",
+  "@generalAccusativeShort": {
+    "description": "Accusative case short"
+  },
+  "generalDative": "[Daatiivee]",
+  "@generalDative": {
+    "description": "Dative case"
+  },
+  "generalDativeShort": "[Daaat]",
+  "@generalDativeShort": {
+    "description": "Dative case short"
+  },
+  "generalGenitive": "[Geeniitiivee]",
+  "@generalGenitive": {
+    "description": "Genitive case"
+  },
+  "generalGenitiveShort": "[Geeen]",
+  "@generalGenitiveShort": {
+    "description": "Genitive case short"
+  },
+  "generalInstrumental": "[IIInstrüümeentaal]",
+  "@generalInstrumental": {
+    "description": "Instrumental case"
+  },
+  "generalInstrumentalShort": "[IIInst]",
+  "@generalInstrumentalShort": {
+    "description": "Instrumental case short"
+  },
+  "generalNominative": "[Nöömiinaatiivee]",
+  "@generalNominative": {
+    "description": "Nominative case"
+  },
+  "generalNominativeShort": "[Nöööm]",
+  "@generalNominativeShort": {
+    "description": "Nominative case short"
+  },
+  "generalPrepositional": "[Preepöösiitiiöönaal]",
+  "@generalPrepositional": {
+    "description": "Prepositional case"
+  },
+  "generalPrepositionalShort": "[Preeep]",
+  "@generalPrepositionalShort": {
+    "description": "Prepositional case short"
+  },
   "homeScreenBottomBarHomeLabel": "[Höömee]",
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"

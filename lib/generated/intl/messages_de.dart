@@ -23,6 +23,27 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage(
             "[Rüüüssiiaan Deecliinaatöör]"),
+        "generalAccusative":
+            MessageLookupByLibrary.simpleMessage("[ÄÄccüüsaatiivee]"),
+        "generalAccusativeShort":
+            MessageLookupByLibrary.simpleMessage("[ÄÄÄcc]"),
+        "generalDative": MessageLookupByLibrary.simpleMessage("[Daatiivee]"),
+        "generalDativeShort": MessageLookupByLibrary.simpleMessage("[Daaat]"),
+        "generalGenitive":
+            MessageLookupByLibrary.simpleMessage("[Geeniitiivee]"),
+        "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("[Geeen]"),
+        "generalInstrumental":
+            MessageLookupByLibrary.simpleMessage("[IIInstrüümeentaal]"),
+        "generalInstrumentalShort":
+            MessageLookupByLibrary.simpleMessage("[IIInst]"),
+        "generalNominative":
+            MessageLookupByLibrary.simpleMessage("[Nöömiinaatiivee]"),
+        "generalNominativeShort":
+            MessageLookupByLibrary.simpleMessage("[Nöööm]"),
+        "generalPrepositional":
+            MessageLookupByLibrary.simpleMessage("[Preepöösiitiiöönaal]"),
+        "generalPrepositionalShort":
+            MessageLookupByLibrary.simpleMessage("[Preeep]"),
         "homeScreenBottomBarHomeLabel":
             MessageLookupByLibrary.simpleMessage("[Höömee]"),
         "homeScreenBottomBarSettingsLabel":

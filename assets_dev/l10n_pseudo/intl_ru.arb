@@ -1,18 +1,66 @@
 {
   "@@locale": "ru",
-  "appName": "[Яцццззииaaп Деэслиипaaтооя]",
+  "appName": "[Яцццззииaaп Дёеслиипaaтооя]",
   "@appName": {
     "description": "Name of the app"
   },
-  "homeScreenBottomBarHomeLabel": "[Ноомее]",
+  "generalAccusative": "[ААссццзaaтиичээ]",
+  "@generalAccusative": {
+    "description": "Accusative case"
+  },
+  "generalAccusativeShort": "[АААсс]",
+  "@generalAccusativeShort": {
+    "description": "Accusative case short"
+  },
+  "generalDative": "[Дaaтиичёе]",
+  "@generalDative": {
+    "description": "Dative case"
+  },
+  "generalDativeShort": "[Дaaaт]",
+  "@generalDativeShort": {
+    "description": "Dative case short"
+  },
+  "generalGenitive": "[Гээпиитиичээ]",
+  "@generalGenitive": {
+    "description": "Genitive case"
+  },
+  "generalGenitiveShort": "[Гэёеп]",
+  "@generalGenitiveShort": {
+    "description": "Genitive case short"
+  },
+  "generalInstrumental": "[ИИИпзтяццмеёптaaл]",
+  "@generalInstrumental": {
+    "description": "Instrumental case"
+  },
+  "generalInstrumentalShort": "[ИИИпзт]",
+  "@generalInstrumentalShort": {
+    "description": "Instrumental case short"
+  },
+  "generalNominative": "[Поомиипaaтиичэе]",
+  "@generalNominative": {
+    "description": "Nominative case"
+  },
+  "generalNominativeShort": "[Пооом]",
+  "@generalNominativeShort": {
+    "description": "Nominative case short"
+  },
+  "generalPrepositional": "[Ряёероозиитииоопaaл]",
+  "@generalPrepositional": {
+    "description": "Prepositional case"
+  },
+  "generalPrepositionalShort": "[Ряеээр]",
+  "@generalPrepositionalShort": {
+    "description": "Prepositional case short"
+  },
+  "homeScreenBottomBarHomeLabel": "[Ноомёё]",
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"
   },
-  "homeScreenBottomBarSettingsLabel": "[Зеёээттиипгз]",
+  "homeScreenBottomBarSettingsLabel": "[Зеэеёттиипгз]",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
   },
-  "searchWordsHintText": "[Зёэёaaясн]",
+  "searchWordsHintText": "[Зэеэaaясн]",
   "@searchWordsHintText": {
     "description": "A hint text to display when searching for words"
   },

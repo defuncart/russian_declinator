@@ -61,6 +61,126 @@ class AppLocalizations {
     );
   }
 
+  /// `Accusative`
+  String get generalAccusative {
+    return Intl.message(
+      'Accusative',
+      name: 'generalAccusative',
+      desc: 'Accusative case',
+      args: [],
+    );
+  }
+
+  /// `Acc`
+  String get generalAccusativeShort {
+    return Intl.message(
+      'Acc',
+      name: 'generalAccusativeShort',
+      desc: 'Accusative case short',
+      args: [],
+    );
+  }
+
+  /// `Dative`
+  String get generalDative {
+    return Intl.message(
+      'Dative',
+      name: 'generalDative',
+      desc: 'Dative case',
+      args: [],
+    );
+  }
+
+  /// `Dat`
+  String get generalDativeShort {
+    return Intl.message(
+      'Dat',
+      name: 'generalDativeShort',
+      desc: 'Dative case short',
+      args: [],
+    );
+  }
+
+  /// `Genitive`
+  String get generalGenitive {
+    return Intl.message(
+      'Genitive',
+      name: 'generalGenitive',
+      desc: 'Genitive case',
+      args: [],
+    );
+  }
+
+  /// `Gen`
+  String get generalGenitiveShort {
+    return Intl.message(
+      'Gen',
+      name: 'generalGenitiveShort',
+      desc: 'Genitive case short',
+      args: [],
+    );
+  }
+
+  /// `Instrumental`
+  String get generalInstrumental {
+    return Intl.message(
+      'Instrumental',
+      name: 'generalInstrumental',
+      desc: 'Instrumental case',
+      args: [],
+    );
+  }
+
+  /// `Inst`
+  String get generalInstrumentalShort {
+    return Intl.message(
+      'Inst',
+      name: 'generalInstrumentalShort',
+      desc: 'Instrumental case short',
+      args: [],
+    );
+  }
+
+  /// `Nominative`
+  String get generalNominative {
+    return Intl.message(
+      'Nominative',
+      name: 'generalNominative',
+      desc: 'Nominative case',
+      args: [],
+    );
+  }
+
+  /// `Nom`
+  String get generalNominativeShort {
+    return Intl.message(
+      'Nom',
+      name: 'generalNominativeShort',
+      desc: 'Nominative case short',
+      args: [],
+    );
+  }
+
+  /// `Prepositional`
+  String get generalPrepositional {
+    return Intl.message(
+      'Prepositional',
+      name: 'generalPrepositional',
+      desc: 'Prepositional case',
+      args: [],
+    );
+  }
+
+  /// `Prep`
+  String get generalPrepositionalShort {
+    return Intl.message(
+      'Prep',
+      name: 'generalPrepositionalShort',
+      desc: 'Prepositional case short',
+      args: [],
+    );
+  }
+
   /// `Home`
   String get homeScreenBottomBarHomeLabel {
     return Intl.message(

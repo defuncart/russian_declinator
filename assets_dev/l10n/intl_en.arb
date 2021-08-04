@@ -4,6 +4,54 @@
   "@appName": {
     "description": "Name of the app"
   },
+  "generalAccusative": "Accusative",
+  "@generalAccusative": {
+    "description": "Accusative case"
+  },
+  "generalAccusativeShort": "Acc",
+  "@generalAccusativeShort": {
+    "description": "Accusative case short"
+  },
+  "generalDative": "Dative",
+  "@generalDative": {
+    "description": "Dative case"
+  },
+  "generalDativeShort": "Dat",
+  "@generalDativeShort": {
+    "description": "Dative case short"
+  },
+  "generalGenitive": "Genitive",
+  "@generalGenitive": {
+    "description": "Genitive case"
+  },
+  "generalGenitiveShort": "Gen",
+  "@generalGenitiveShort": {
+    "description": "Genitive case short"
+  },
+  "generalInstrumental": "Instrumental",
+  "@generalInstrumental": {
+    "description": "Instrumental case"
+  },
+  "generalInstrumentalShort": "Inst",
+  "@generalInstrumentalShort": {
+    "description": "Instrumental case short"
+  },
+  "generalNominative": "Nominative",
+  "@generalNominative": {
+    "description": "Nominative case"
+  },
+  "generalNominativeShort": "Nom",
+  "@generalNominativeShort": {
+    "description": "Nominative case short"
+  },
+  "generalPrepositional": "Prepositional",
+  "@generalPrepositional": {
+    "description": "Prepositional case"
+  },
+  "generalPrepositionalShort": "Prep",
+  "@generalPrepositionalShort": {
+    "description": "Prepositional case short"
+  },
   "homeScreenBottomBarHomeLabel": "Home",
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"

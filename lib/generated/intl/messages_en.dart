@@ -22,6 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("Russian Declinator"),
+        "generalAccusative": MessageLookupByLibrary.simpleMessage("Accusative"),
+        "generalAccusativeShort": MessageLookupByLibrary.simpleMessage("Acc"),
+        "generalDative": MessageLookupByLibrary.simpleMessage("Dative"),
+        "generalDativeShort": MessageLookupByLibrary.simpleMessage("Dat"),
+        "generalGenitive": MessageLookupByLibrary.simpleMessage("Genitive"),
+        "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("Gen"),
+        "generalInstrumental":
+            MessageLookupByLibrary.simpleMessage("Instrumental"),
+        "generalInstrumentalShort":
+            MessageLookupByLibrary.simpleMessage("Inst"),
+        "generalNominative": MessageLookupByLibrary.simpleMessage("Nominative"),
+        "generalNominativeShort": MessageLookupByLibrary.simpleMessage("Nom"),
+        "generalPrepositional":
+            MessageLookupByLibrary.simpleMessage("Prepositional"),
+        "generalPrepositionalShort":
+            MessageLookupByLibrary.simpleMessage("Prep"),
         "homeScreenBottomBarHomeLabel":
             MessageLookupByLibrary.simpleMessage("Home"),
         "homeScreenBottomBarSettingsLabel":
