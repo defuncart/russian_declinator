@@ -4,6 +4,8 @@ import 'package:russian_declinator/widgets/home_screen/home_tab/home_tab.dart';
 import 'package:russian_declinator/widgets/home_screen/settings_tab/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const routeName = 'HomeScreen';
+
   const HomeScreen({
     Key? key,
   }) : super(key: key);

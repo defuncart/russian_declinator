@@ -28,11 +28,7 @@ class HomeTab extends StatelessWidget {
           ),
           ElevatedButton(
             child: const Text('Noun Multiple Choice'),
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const GameScreen(),
-              ),
-            ),
+            onPressed: () => Navigator.of(context).pushNamed(GameScreen.routeName),
           ),
         ],
       ),

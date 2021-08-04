@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:russian_declinator/configs/app_themes.dart';
 import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/generated/l10n.dart';
+import 'package:russian_declinator/widgets/game_screen/game_screen.dart';
 import 'package:russian_declinator/widgets/home_screen/home_screen.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -90,7 +91,11 @@ class _MyApp extends StatelessWidget {
             darkTheme: AppThemes.dark,
             themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
             locale: ref.watch(languageProvider).state,
-            home: const HomeScreen(),
+            initialRoute: HomeScreen.routeName,
+            routes: {
+              HomeScreen.routeName: (_) => const HomeScreen(),
+              GameScreen.routeName: (_) => const GameScreen(),
+            },
           ),
         );
       },

@@ -5,6 +5,8 @@ import 'package:russian_declinator/services/game/game_service.dart';
 import 'package:russian_declinator/widgets/common/word_with_stress.dart';
 
 class GameScreen extends StatefulWidget {
+  static const routeName = 'GameScreen';
+
   const GameScreen({Key? key}) : super(key: key);
 
   @override
