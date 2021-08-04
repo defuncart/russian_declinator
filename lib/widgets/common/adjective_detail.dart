@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:russian_declinator/di_container.dart';
+import 'package:russian_declinator/enums/adjective_form.dart';
 import 'package:russian_declinator/enums/case.dart';
 import 'package:russian_declinator/extensions/case_extensions.dart';
 import 'package:russian_declinator/services/databases/database.dart' show Adjective;
@@ -108,13 +109,6 @@ class AdjectiveColumn extends StatelessWidget {
             for (final v in f.split(',')) WordWithStress(v.trim()),
         ],
       );
-}
-
-enum AdjectiveForm {
-  masc,
-  fem,
-  neu,
-  plural,
 }
 
 extension AdjectiveExtensions on Adjective {
