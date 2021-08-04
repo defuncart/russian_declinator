@@ -4,53 +4,65 @@
   "@appName": {
     "description": "Name of the app"
   },
-  "generalAccusative": "[ÄÄccüüsaatiivee]",
-  "@generalAccusative": {
-    "description": "Accusative case"
-  },
-  "generalAccusativeShort": "[ÄÄÄcc]",
-  "@generalAccusativeShort": {
-    "description": "Accusative case short"
-  },
-  "generalDative": "[Daatiivee]",
-  "@generalDative": {
-    "description": "Dative case"
-  },
-  "generalDativeShort": "[Daaat]",
-  "@generalDativeShort": {
-    "description": "Dative case short"
+  "generalNominative": "[Nöömiinaatiivee]",
+  "@generalNominative": {
+    "description": "Nominative case"
   },
   "generalGenitive": "[Geeniitiivee]",
   "@generalGenitive": {
     "description": "Genitive case"
   },
-  "generalGenitiveShort": "[Geeen]",
-  "@generalGenitiveShort": {
-    "description": "Genitive case short"
+  "generalDative": "[Daatiivee]",
+  "@generalDative": {
+    "description": "Dative case"
+  },
+  "generalAccusative": "[ÄÄccüüsaatiivee]",
+  "@generalAccusative": {
+    "description": "Accusative case"
   },
   "generalInstrumental": "[IIInstrüümeentaal]",
   "@generalInstrumental": {
     "description": "Instrumental case"
   },
-  "generalInstrumentalShort": "[IIInst]",
-  "@generalInstrumentalShort": {
-    "description": "Instrumental case short"
-  },
-  "generalNominative": "[Nöömiinaatiivee]",
-  "@generalNominative": {
-    "description": "Nominative case"
+  "generalPrepositional": "[Preepöösiitiiöönaal]",
+  "@generalPrepositional": {
+    "description": "Prepositional case"
   },
   "generalNominativeShort": "[Nöööm]",
   "@generalNominativeShort": {
     "description": "Nominative case short"
   },
-  "generalPrepositional": "[Preepöösiitiiöönaal]",
-  "@generalPrepositional": {
-    "description": "Prepositional case"
+  "generalGenitiveShort": "[Geeen]",
+  "@generalGenitiveShort": {
+    "description": "Genitive case short"
+  },
+  "generalDativeShort": "[Daaat]",
+  "@generalDativeShort": {
+    "description": "Dative case short"
+  },
+  "generalAccusativeShort": "[ÄÄÄcc]",
+  "@generalAccusativeShort": {
+    "description": "Accusative case short"
+  },
+  "generalInstrumentalShort": "[IIInst]",
+  "@generalInstrumentalShort": {
+    "description": "Instrumental case short"
   },
   "generalPrepositionalShort": "[Preeep]",
   "@generalPrepositionalShort": {
     "description": "Prepositional case short"
+  },
+  "generalSingular": "[Siiingüülaar]",
+  "@generalSingular": {
+    "description": "Singular"
+  },
+  "generalPlural": "[Plüüüraal]",
+  "@generalPlural": {
+    "description": "Plural"
+  },
+  "searchWordsHintText": "[Seeeaarch]",
+  "@searchWordsHintText": {
+    "description": "A hint text to display when searching for words"
   },
   "homeScreenBottomBarHomeLabel": "[Höömee]",
   "@homeScreenBottomBarHomeLabel": {
@@ -59,10 +71,6 @@
   "homeScreenBottomBarSettingsLabel": "[Seeeettiings]",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
-  },
-  "searchWordsHintText": "[Seeeaarch]",
-  "@searchWordsHintText": {
-    "description": "A hint text to display when searching for words"
   },
   "settingsTabDarkModeLabel": "[Daaaark Möödee]",
   "@settingsTabDarkModeLabel": {

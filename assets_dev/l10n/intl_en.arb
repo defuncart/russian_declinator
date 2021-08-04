@@ -4,53 +4,65 @@
   "@appName": {
     "description": "Name of the app"
   },
-  "generalAccusative": "Accusative",
-  "@generalAccusative": {
-    "description": "Accusative case"
-  },
-  "generalAccusativeShort": "Acc",
-  "@generalAccusativeShort": {
-    "description": "Accusative case short"
-  },
-  "generalDative": "Dative",
-  "@generalDative": {
-    "description": "Dative case"
-  },
-  "generalDativeShort": "Dat",
-  "@generalDativeShort": {
-    "description": "Dative case short"
+  "generalNominative": "Nominative",
+  "@generalNominative": {
+    "description": "Nominative case"
   },
   "generalGenitive": "Genitive",
   "@generalGenitive": {
     "description": "Genitive case"
   },
-  "generalGenitiveShort": "Gen",
-  "@generalGenitiveShort": {
-    "description": "Genitive case short"
+  "generalDative": "Dative",
+  "@generalDative": {
+    "description": "Dative case"
+  },
+  "generalAccusative": "Accusative",
+  "@generalAccusative": {
+    "description": "Accusative case"
   },
   "generalInstrumental": "Instrumental",
   "@generalInstrumental": {
     "description": "Instrumental case"
   },
-  "generalInstrumentalShort": "Inst",
-  "@generalInstrumentalShort": {
-    "description": "Instrumental case short"
-  },
-  "generalNominative": "Nominative",
-  "@generalNominative": {
-    "description": "Nominative case"
+  "generalPrepositional": "Prepositional",
+  "@generalPrepositional": {
+    "description": "Prepositional case"
   },
   "generalNominativeShort": "Nom",
   "@generalNominativeShort": {
     "description": "Nominative case short"
   },
-  "generalPrepositional": "Prepositional",
-  "@generalPrepositional": {
-    "description": "Prepositional case"
+  "generalGenitiveShort": "Gen",
+  "@generalGenitiveShort": {
+    "description": "Genitive case short"
+  },
+  "generalDativeShort": "Dat",
+  "@generalDativeShort": {
+    "description": "Dative case short"
+  },
+  "generalAccusativeShort": "Acc",
+  "@generalAccusativeShort": {
+    "description": "Accusative case short"
+  },
+  "generalInstrumentalShort": "Inst",
+  "@generalInstrumentalShort": {
+    "description": "Instrumental case short"
   },
   "generalPrepositionalShort": "Prep",
   "@generalPrepositionalShort": {
     "description": "Prepositional case short"
+  },
+  "generalSingular": "Singular",
+  "@generalSingular": {
+    "description": "Singular"
+  },
+  "generalPlural": "Plural",
+  "@generalPlural": {
+    "description": "Plural"
+  },
+  "searchWordsHintText": "Search",
+  "@searchWordsHintText": {
+    "description": "A hint text to display when searching for words"
   },
   "homeScreenBottomBarHomeLabel": "Home",
   "@homeScreenBottomBarHomeLabel": {
@@ -59,10 +71,6 @@
   "homeScreenBottomBarSettingsLabel": "Settings",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
-  },
-  "searchWordsHintText": "Search",
-  "@searchWordsHintText": {
-    "description": "A hint text to display when searching for words"
   },
   "settingsTabDarkModeLabel": "Dark Mode",
   "@settingsTabDarkModeLabel": {

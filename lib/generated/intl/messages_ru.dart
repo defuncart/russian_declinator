@@ -22,37 +22,40 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage(
-            "[Яцццззииaaп Дёеслиипaaтооя]"),
+            "[Яцццззииaaп Дэеслиипaaтооя]"),
         "generalAccusative":
             MessageLookupByLibrary.simpleMessage("[ААссццзaaтиичээ]"),
         "generalAccusativeShort":
             MessageLookupByLibrary.simpleMessage("[АААсс]"),
-        "generalDative": MessageLookupByLibrary.simpleMessage("[Дaaтиичёе]"),
+        "generalDative": MessageLookupByLibrary.simpleMessage("[Дaaтиичээ]"),
         "generalDativeShort": MessageLookupByLibrary.simpleMessage("[Дaaaт]"),
         "generalGenitive":
-            MessageLookupByLibrary.simpleMessage("[Гээпиитиичээ]"),
-        "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("[Гэёеп]"),
+            MessageLookupByLibrary.simpleMessage("[Гёэпиитиичее]"),
+        "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("[Гэёэп]"),
         "generalInstrumental":
-            MessageLookupByLibrary.simpleMessage("[ИИИпзтяццмеёптaaл]"),
+            MessageLookupByLibrary.simpleMessage("[ИИИпзтяццмеэптaaл]"),
         "generalInstrumentalShort":
             MessageLookupByLibrary.simpleMessage("[ИИИпзт]"),
         "generalNominative":
-            MessageLookupByLibrary.simpleMessage("[Поомиипaaтиичэе]"),
+            MessageLookupByLibrary.simpleMessage("[Поомиипaaтиичээ]"),
         "generalNominativeShort":
             MessageLookupByLibrary.simpleMessage("[Пооом]"),
+        "generalPlural": MessageLookupByLibrary.simpleMessage("[Рлцццяaaл]"),
         "generalPrepositional":
-            MessageLookupByLibrary.simpleMessage("[Ряёероозиитииоопaaл]"),
+            MessageLookupByLibrary.simpleMessage("[Ряэёроозиитииоопaaл]"),
         "generalPrepositionalShort":
-            MessageLookupByLibrary.simpleMessage("[Ряеээр]"),
+            MessageLookupByLibrary.simpleMessage("[Ряёэер]"),
+        "generalSingular":
+            MessageLookupByLibrary.simpleMessage("[Зииипгццлaaя]"),
         "homeScreenBottomBarHomeLabel":
-            MessageLookupByLibrary.simpleMessage("[Ноомёё]"),
+            MessageLookupByLibrary.simpleMessage("[Ноомэе]"),
         "homeScreenBottomBarSettingsLabel":
-            MessageLookupByLibrary.simpleMessage("[Зеэеёттиипгз]"),
+            MessageLookupByLibrary.simpleMessage("[Зээёеттиипгз]"),
         "searchWordsHintText":
-            MessageLookupByLibrary.simpleMessage("[Зэеэaaясн]"),
+            MessageLookupByLibrary.simpleMessage("[Зеэеaaясн]"),
         "settingsTabDarkModeLabel":
-            MessageLookupByLibrary.simpleMessage("[Дaaaaяк Моодее]"),
+            MessageLookupByLibrary.simpleMessage("[Дaaaaяк Моодэе]"),
         "settingsTabLanguageLabel":
-            MessageLookupByLibrary.simpleMessage("[Лaaпгццaaгее]")
+            MessageLookupByLibrary.simpleMessage("[Лaaпгццaaгэё]")
       };
 }

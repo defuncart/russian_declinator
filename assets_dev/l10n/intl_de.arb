@@ -52,6 +52,14 @@
   "@generalPrepositionalShort": {
     "description": "Prepositional case short"
   },
+  "generalSingular": "Singular",
+  "@generalSingular": {
+    "description": "Singular"
+  },
+  "generalPlural": "Plural",
+  "@generalPlural": {
+    "description": "Plural"
+  },
   "searchWordsHintText": "Suchen",
   "@searchWordsHintText": {
     "description": "A hint text to display when searching for words"

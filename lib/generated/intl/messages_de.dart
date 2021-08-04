@@ -40,10 +40,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("[Nöömiinaatiivee]"),
         "generalNominativeShort":
             MessageLookupByLibrary.simpleMessage("[Nöööm]"),
+        "generalPlural": MessageLookupByLibrary.simpleMessage("[Plüüüraal]"),
         "generalPrepositional":
             MessageLookupByLibrary.simpleMessage("[Preepöösiitiiöönaal]"),
         "generalPrepositionalShort":
             MessageLookupByLibrary.simpleMessage("[Preeep]"),
+        "generalSingular":
+            MessageLookupByLibrary.simpleMessage("[Siiingüülaar]"),
         "homeScreenBottomBarHomeLabel":
             MessageLookupByLibrary.simpleMessage("[Höömee]"),
         "homeScreenBottomBarSettingsLabel":

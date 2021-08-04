@@ -61,42 +61,12 @@ class AppLocalizations {
     );
   }
 
-  /// `Accusative`
-  String get generalAccusative {
+  /// `Nominative`
+  String get generalNominative {
     return Intl.message(
-      'Accusative',
-      name: 'generalAccusative',
-      desc: 'Accusative case',
-      args: [],
-    );
-  }
-
-  /// `Acc`
-  String get generalAccusativeShort {
-    return Intl.message(
-      'Acc',
-      name: 'generalAccusativeShort',
-      desc: 'Accusative case short',
-      args: [],
-    );
-  }
-
-  /// `Dative`
-  String get generalDative {
-    return Intl.message(
-      'Dative',
-      name: 'generalDative',
-      desc: 'Dative case',
-      args: [],
-    );
-  }
-
-  /// `Dat`
-  String get generalDativeShort {
-    return Intl.message(
-      'Dat',
-      name: 'generalDativeShort',
-      desc: 'Dative case short',
+      'Nominative',
+      name: 'generalNominative',
+      desc: 'Nominative case',
       args: [],
     );
   }
@@ -111,12 +81,22 @@ class AppLocalizations {
     );
   }
 
-  /// `Gen`
-  String get generalGenitiveShort {
+  /// `Dative`
+  String get generalDative {
     return Intl.message(
-      'Gen',
-      name: 'generalGenitiveShort',
-      desc: 'Genitive case short',
+      'Dative',
+      name: 'generalDative',
+      desc: 'Dative case',
+      args: [],
+    );
+  }
+
+  /// `Accusative`
+  String get generalAccusative {
+    return Intl.message(
+      'Accusative',
+      name: 'generalAccusative',
+      desc: 'Accusative case',
       args: [],
     );
   }
@@ -131,22 +111,12 @@ class AppLocalizations {
     );
   }
 
-  /// `Inst`
-  String get generalInstrumentalShort {
+  /// `Prepositional`
+  String get generalPrepositional {
     return Intl.message(
-      'Inst',
-      name: 'generalInstrumentalShort',
-      desc: 'Instrumental case short',
-      args: [],
-    );
-  }
-
-  /// `Nominative`
-  String get generalNominative {
-    return Intl.message(
-      'Nominative',
-      name: 'generalNominative',
-      desc: 'Nominative case',
+      'Prepositional',
+      name: 'generalPrepositional',
+      desc: 'Prepositional case',
       args: [],
     );
   }
@@ -161,12 +131,42 @@ class AppLocalizations {
     );
   }
 
-  /// `Prepositional`
-  String get generalPrepositional {
+  /// `Gen`
+  String get generalGenitiveShort {
     return Intl.message(
-      'Prepositional',
-      name: 'generalPrepositional',
-      desc: 'Prepositional case',
+      'Gen',
+      name: 'generalGenitiveShort',
+      desc: 'Genitive case short',
+      args: [],
+    );
+  }
+
+  /// `Dat`
+  String get generalDativeShort {
+    return Intl.message(
+      'Dat',
+      name: 'generalDativeShort',
+      desc: 'Dative case short',
+      args: [],
+    );
+  }
+
+  /// `Acc`
+  String get generalAccusativeShort {
+    return Intl.message(
+      'Acc',
+      name: 'generalAccusativeShort',
+      desc: 'Accusative case short',
+      args: [],
+    );
+  }
+
+  /// `Inst`
+  String get generalInstrumentalShort {
+    return Intl.message(
+      'Inst',
+      name: 'generalInstrumentalShort',
+      desc: 'Instrumental case short',
       args: [],
     );
   }
@@ -177,6 +177,36 @@ class AppLocalizations {
       'Prep',
       name: 'generalPrepositionalShort',
       desc: 'Prepositional case short',
+      args: [],
+    );
+  }
+
+  /// `Singular`
+  String get generalSingular {
+    return Intl.message(
+      'Singular',
+      name: 'generalSingular',
+      desc: 'Singular',
+      args: [],
+    );
+  }
+
+  /// `Plural`
+  String get generalPlural {
+    return Intl.message(
+      'Plural',
+      name: 'generalPlural',
+      desc: 'Plural',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get searchWordsHintText {
+    return Intl.message(
+      'Search',
+      name: 'searchWordsHintText',
+      desc: 'A hint text to display when searching for words',
       args: [],
     );
   }
@@ -197,16 +227,6 @@ class AppLocalizations {
       'Settings',
       name: 'homeScreenBottomBarSettingsLabel',
       desc: 'A label for the settings bottom nav item',
-      args: [],
-    );
-  }
-
-  /// `Search`
-  String get searchWordsHintText {
-    return Intl.message(
-      'Search',
-      name: 'searchWordsHintText',
-      desc: 'A hint text to display when searching for words',
       args: [],
     );
   }

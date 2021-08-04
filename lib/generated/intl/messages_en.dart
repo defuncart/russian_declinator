@@ -34,10 +34,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Inst"),
         "generalNominative": MessageLookupByLibrary.simpleMessage("Nominative"),
         "generalNominativeShort": MessageLookupByLibrary.simpleMessage("Nom"),
+        "generalPlural": MessageLookupByLibrary.simpleMessage("Plural"),
         "generalPrepositional":
             MessageLookupByLibrary.simpleMessage("Prepositional"),
         "generalPrepositionalShort":
             MessageLookupByLibrary.simpleMessage("Prep"),
+        "generalSingular": MessageLookupByLibrary.simpleMessage("Singular"),
         "homeScreenBottomBarHomeLabel":
             MessageLookupByLibrary.simpleMessage("Home"),
         "homeScreenBottomBarSettingsLabel":

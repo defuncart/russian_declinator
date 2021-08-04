@@ -12,6 +12,8 @@ generalDativeShort;Dative case short;Dat;Dat;
 generalAccusativeShort;Accusative case short;Acc;Akk;
 generalInstrumentalShort;Instrumental case short;Inst;Inst;
 generalPrepositionalShort;Prepositional case short;Prep;Präp;
+generalSingular;Singular;Singular;;
+generalPlural;Plural;Plural;;
 searchWordsHintText;A hint text to display when searching for words;Search;Suchen;
 homeScreenBottomBarHomeLabel;A label for the home bottom nav item;Home;;
 homeScreenBottomBarSettingsLabel;A label for the settings bottom nav item;Settings;;
