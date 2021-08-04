@@ -2,7 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:russian_declinator/di_container.dart';
+import 'package:russian_declinator/enums/adjective_form.dart';
 import 'package:russian_declinator/enums/case.dart';
+import 'package:russian_declinator/extensions/adjective_extensions.dart';
+import 'package:russian_declinator/extensions/adjective_form_extensions.dart';
 import 'package:russian_declinator/extensions/case_extensions.dart';
 import 'package:russian_declinator/extensions/noun_extensions.dart';
 import 'package:russian_declinator/generated/l10n.dart';
@@ -103,6 +106,10 @@ class GameService {
         _determineNounRound();
         break;
       case GameType.adjective:
+        assert(_adjectives != null);
+        assert(_adjectives?.length == numberQuestions);
+
+        _determineAdjectiveRound();
         break;
       case GameType.adjectiveNoun:
         break;
@@ -123,13 +130,7 @@ class GameService {
       isPlural = _random.nextBool();
     }
 
-    _currentQuestion = noun.accented;
-
     final Case selectedCase = cases.randomElement;
-
-    _currentInfo = selectedCase.localized +
-        ' ' +
-        (isPlural ? AppLocalizations.current.generalPlural : AppLocalizations.current.generalSingular);
 
     var declensions = noun.allDeclensions;
     var selectedDeclensionIndex = Case.values.indexOf(selectedCase) + (isPlural ? Case.values.length : 0);
@@ -143,7 +144,38 @@ class GameService {
       answerIndex: selectedDeclensionIndex,
     );
     _correctAnswerIndex = answerIndeces.indexOf(selectedDeclensionIndex);
+
+    _currentQuestion = noun.accented;
+    _currentInfo = selectedCase.localized +
+        ' ' +
+        (isPlural ? AppLocalizations.current.generalPlural : AppLocalizations.current.generalSingular);
     _currentAnswers = answerIndeces.map((index) => declensions[index]).toList();
+  }
+
+  void _determineAdjectiveRound() {
+    final adjective = _adjectives![_questionIndeces[_currentIndex]];
+
+    final AdjectiveForm adjectiveForm = AdjectiveForm.values.randomElement;
+    final Case selectedCase = cases.randomElement;
+
+    // deal with animate, inanimate case
+
+    final declensions = adjective.allDeclensions.toSet().toList();
+    final selectedDeclension = adjective.declension(form: adjectiveForm, declenionCase: selectedCase);
+    final selectedDeclensionIndex = declensions.indexOf(selectedDeclension);
+
+    var answerIndeces = determineAnswerIndeces(
+      totalAnswers: 4,
+      numberPossibleAnswers: declensions.length,
+      answerIndex: selectedDeclensionIndex,
+    );
+    _correctAnswerIndex = answerIndeces.indexOf(selectedDeclensionIndex);
+
+    _currentAnswers = answerIndeces.map((index) => declensions[index]).toList();
+
+    _currentQuestion = adjective.accented;
+
+    _currentInfo = selectedCase.localized + ' ' + adjectiveForm.localized;
   }
 
   @visibleForTesting
