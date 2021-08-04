@@ -16,8 +16,8 @@ enum GameType {
   adjectiveNoun,
 }
 
-class GameService {
-  GameService({
+class GameSettings {
+  const GameSettings({
     required this.type,
     this.numberQuestions = 10,
     this.cases = Case.values,
@@ -26,6 +26,14 @@ class GameService {
   final GameType type;
   final int numberQuestions;
   final List<Case> cases;
+}
+
+class GameService {
+  GameService({
+    required this.settings,
+  });
+
+  final GameSettings settings;
 
   // private variables
 
@@ -50,17 +58,17 @@ class GameService {
 
   int get score => _score;
 
-  bool get isGameOver => _currentIndex == numberQuestions - 1;
+  bool get isGameOver => _currentIndex == settings.numberQuestions - 1;
 
   // methods
 
   Future<void> init() async {
-    if (type == GameType.noun || type == GameType.adjectiveNoun) {
-      _nouns = (await DIContainer.db.allNouns).take(numberQuestions).toList();
+    if (settings.type == GameType.noun || settings.type == GameType.adjectiveNoun) {
+      _nouns = (await DIContainer.db.allNouns).take(settings.numberQuestions).toList();
     }
 
-    if (type == GameType.adjective || type == GameType.adjectiveNoun) {
-      _adjectives = (await DIContainer.db.allAdjectives).take(numberQuestions).toList();
+    if (settings.type == GameType.adjective || settings.type == GameType.adjectiveNoun) {
+      _adjectives = (await DIContainer.db.allAdjectives).take(settings.numberQuestions).toList();
     }
 
     reset();
@@ -70,7 +78,7 @@ class GameService {
   void reset() {
     _currentIndex = 0;
     _score = 0;
-    _questionIndeces = List.generate(numberQuestions, (index) => index)..shuffle();
+    _questionIndeces = List.generate(settings.numberQuestions, (index) => index)..shuffle();
   }
 
   bool answer(int index) {
@@ -89,7 +97,7 @@ class GameService {
   // private methods
 
   void _determineIfCanProceedToNextRound() {
-    if (++_currentIndex < numberQuestions - 1) {
+    if (++_currentIndex < settings.numberQuestions - 1) {
       _nextRound();
     } else {
       // TODO
@@ -98,16 +106,16 @@ class GameService {
   }
 
   void _nextRound() {
-    switch (type) {
+    switch (settings.type) {
       case GameType.noun:
         assert(_nouns != null);
-        assert(_nouns?.length == numberQuestions);
+        assert(_nouns?.length == settings.numberQuestions);
 
         _determineNounRound();
         break;
       case GameType.adjective:
         assert(_adjectives != null);
-        assert(_adjectives?.length == numberQuestions);
+        assert(_adjectives?.length == settings.numberQuestions);
 
         _determineAdjectiveRound();
         break;
@@ -130,7 +138,7 @@ class GameService {
       isPlural = _random.nextBool();
     }
 
-    final Case selectedCase = cases.randomElement;
+    final Case selectedCase = settings.cases.randomElement;
 
     var declensions = noun.allDeclensions;
     var selectedDeclensionIndex = Case.values.indexOf(selectedCase) + (isPlural ? Case.values.length : 0);
@@ -156,7 +164,7 @@ class GameService {
     final adjective = _adjectives![_questionIndeces[_currentIndex]];
 
     final AdjectiveForm adjectiveForm = AdjectiveForm.values.randomElement;
-    final Case selectedCase = cases.randomElement;
+    final Case selectedCase = settings.cases.randomElement;
 
     // deal with animate, inanimate case
 

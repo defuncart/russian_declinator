@@ -14,7 +14,9 @@ class GameScreen extends StatefulWidget {
 class _GameScreenState extends State<GameScreen> {
   var _isLoaded = false;
   final _gameService = GameService(
-    type: GameType.adjective,
+    settings: const GameSettings(
+      type: GameType.adjective,
+    ),
   );
 
   @override
