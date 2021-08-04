@@ -5,11 +5,13 @@ class WordWithStress extends StatelessWidget {
   const WordWithStress(
     this.word, {
     this.textAlign,
+    this.stressColor,
     Key? key,
   }) : super(key: key);
 
   final String word;
   final TextAlign? textAlign;
+  final Color? stressColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class WordWithStress extends StatelessWidget {
                 text: wordAsSyllables.syllables[i],
                 style: wordAsSyllables.stressPosition == i
                     ? TextStyle(
-                        color: Theme.of(context).accentColor,
+                        color: stressColor ?? Theme.of(context).accentColor,
                       )
                     : null,
               ),
