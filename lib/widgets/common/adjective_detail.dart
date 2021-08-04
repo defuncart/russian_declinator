@@ -81,7 +81,10 @@ class DeclensionColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        for (final declensionCase in Case.values) Text(declensionCase.localized),
+        for (final declensionCase in Case.values) ...[
+          Text(declensionCase.localized),
+          if (declensionCase == Case.accusative) const Text(''),
+        ]
       ],
     );
   }
@@ -101,7 +104,8 @@ class AdjectiveColumn extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          for (final f in adjective.form(form)) WordWithStress(f),
+          for (final f in adjective.form(form))
+            for (final v in f.split(',')) WordWithStress(v.trim()),
         ],
       );
 }
