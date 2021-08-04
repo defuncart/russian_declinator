@@ -60,6 +60,18 @@
   "@generalPlural": {
     "description": "Plural"
   },
+  "generalMasculine": "Masculine",
+  "@generalMasculine": {
+    "description": "Masculine"
+  },
+  "generalFeminine": "Feminine",
+  "@generalFeminine": {
+    "description": "Feminine"
+  },
+  "generalNeuter": "Neuter",
+  "@generalNeuter": {
+    "description": "Neuter"
+  },
   "searchWordsHintText": "Suchen",
   "@searchWordsHintText": {
     "description": "A hint text to display when searching for words"

@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("[ÄÄÄcc]"),
         "generalDative": MessageLookupByLibrary.simpleMessage("[Daatiivee]"),
         "generalDativeShort": MessageLookupByLibrary.simpleMessage("[Daaat]"),
+        "generalFeminine":
+            MessageLookupByLibrary.simpleMessage("[Feemiiniinee]"),
         "generalGenitive":
             MessageLookupByLibrary.simpleMessage("[Geeniitiivee]"),
         "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("[Geeen]"),
@@ -36,6 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("[IIInstrüümeentaal]"),
         "generalInstrumentalShort":
             MessageLookupByLibrary.simpleMessage("[IIInst]"),
+        "generalMasculine":
+            MessageLookupByLibrary.simpleMessage("[Maaascüüliinee]"),
+        "generalNeuter": MessageLookupByLibrary.simpleMessage("[Neeüüteer]"),
         "generalNominative":
             MessageLookupByLibrary.simpleMessage("[Nöömiinaatiivee]"),
         "generalNominativeShort":

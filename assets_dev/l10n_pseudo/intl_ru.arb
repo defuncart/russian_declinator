@@ -1,30 +1,30 @@
 {
   "@@locale": "ru",
-  "appName": "[Яцццззииaaп Дэеслиипaaтооя]",
+  "appName": "[Яцццззииaaп Деэслиипaaтооя]",
   "@appName": {
     "description": "Name of the app"
   },
-  "generalNominative": "[Поомиипaaтиичээ]",
+  "generalNominative": "[Поомиипaaтиичёе]",
   "@generalNominative": {
     "description": "Nominative case"
   },
-  "generalGenitive": "[Гёэпиитиичее]",
+  "generalGenitive": "[Гёэпиитиичээ]",
   "@generalGenitive": {
     "description": "Genitive case"
   },
-  "generalDative": "[Дaaтиичээ]",
+  "generalDative": "[Дaaтиичёё]",
   "@generalDative": {
     "description": "Dative case"
   },
-  "generalAccusative": "[ААссццзaaтиичээ]",
+  "generalAccusative": "[ААссццзaaтиичеэ]",
   "@generalAccusative": {
     "description": "Accusative case"
   },
-  "generalInstrumental": "[ИИИпзтяццмеэптaaл]",
+  "generalInstrumental": "[ИИИпзтяццмеёптaaл]",
   "@generalInstrumental": {
     "description": "Instrumental case"
   },
-  "generalPrepositional": "[Ряэёроозиитииоопaaл]",
+  "generalPrepositional": "[Ряёэроозиитииоопaaл]",
   "@generalPrepositional": {
     "description": "Prepositional case"
   },
@@ -32,7 +32,7 @@
   "@generalNominativeShort": {
     "description": "Nominative case short"
   },
-  "generalGenitiveShort": "[Гэёэп]",
+  "generalGenitiveShort": "[Гёээп]",
   "@generalGenitiveShort": {
     "description": "Genitive case short"
   },
@@ -48,7 +48,7 @@
   "@generalInstrumentalShort": {
     "description": "Instrumental case short"
   },
-  "generalPrepositionalShort": "[Ряёэер]",
+  "generalPrepositionalShort": "[Ряэёер]",
   "@generalPrepositionalShort": {
     "description": "Prepositional case short"
   },
@@ -60,6 +60,18 @@
   "@generalPlural": {
     "description": "Plural"
   },
+  "generalMasculine": "[Мaaaзсццлиипёэ]",
+  "@generalMasculine": {
+    "description": "Masculine"
+  },
+  "generalFeminine": "[Феемиипиипее]",
+  "@generalFeminine": {
+    "description": "Feminine"
+  },
+  "generalNeuter": "[Пееццтэея]",
+  "@generalNeuter": {
+    "description": "Neuter"
+  },
   "searchWordsHintText": "[Зеэеaaясн]",
   "@searchWordsHintText": {
     "description": "A hint text to display when searching for words"
@@ -68,15 +80,15 @@
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"
   },
-  "homeScreenBottomBarSettingsLabel": "[Зээёеттиипгз]",
+  "homeScreenBottomBarSettingsLabel": "[Зёёеёттиипгз]",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
   },
-  "settingsTabDarkModeLabel": "[Дaaaaяк Моодэе]",
+  "settingsTabDarkModeLabel": "[Дaaaaяк Моодёэ]",
   "@settingsTabDarkModeLabel": {
     "description": "A label for dark mode setting"
   },
-  "settingsTabLanguageLabel": "[Лaaпгццaaгэё]",
+  "settingsTabLanguageLabel": "[Лaaпгццaaгёё]",
   "@settingsTabLanguageLabel": {
     "description": "A label for language setting"
   }

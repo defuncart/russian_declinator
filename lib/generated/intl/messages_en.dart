@@ -26,12 +26,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "generalAccusativeShort": MessageLookupByLibrary.simpleMessage("Acc"),
         "generalDative": MessageLookupByLibrary.simpleMessage("Dative"),
         "generalDativeShort": MessageLookupByLibrary.simpleMessage("Dat"),
+        "generalFeminine": MessageLookupByLibrary.simpleMessage("Feminine"),
         "generalGenitive": MessageLookupByLibrary.simpleMessage("Genitive"),
         "generalGenitiveShort": MessageLookupByLibrary.simpleMessage("Gen"),
         "generalInstrumental":
             MessageLookupByLibrary.simpleMessage("Instrumental"),
         "generalInstrumentalShort":
             MessageLookupByLibrary.simpleMessage("Inst"),
+        "generalMasculine": MessageLookupByLibrary.simpleMessage("Masculine"),
+        "generalNeuter": MessageLookupByLibrary.simpleMessage("Neuter"),
         "generalNominative": MessageLookupByLibrary.simpleMessage("Nominative"),
         "generalNominativeShort": MessageLookupByLibrary.simpleMessage("Nom"),
         "generalPlural": MessageLookupByLibrary.simpleMessage("Plural"),

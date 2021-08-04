@@ -201,6 +201,36 @@ class AppLocalizations {
     );
   }
 
+  /// `Masculine`
+  String get generalMasculine {
+    return Intl.message(
+      'Masculine',
+      name: 'generalMasculine',
+      desc: 'Masculine',
+      args: [],
+    );
+  }
+
+  /// `Feminine`
+  String get generalFeminine {
+    return Intl.message(
+      'Feminine',
+      name: 'generalFeminine',
+      desc: 'Feminine',
+      args: [],
+    );
+  }
+
+  /// `Neuter`
+  String get generalNeuter {
+    return Intl.message(
+      'Neuter',
+      name: 'generalNeuter',
+      desc: 'Neuter',
+      args: [],
+    );
+  }
+
   /// `Search`
   String get searchWordsHintText {
     return Intl.message(
