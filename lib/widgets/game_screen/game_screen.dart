@@ -82,7 +82,7 @@ class AnswerButton extends StatelessWidget {
       onPressed: onPressed,
       child: WordWithStress(
         text,
-        stressColor: Colors.white,
+        stressColor: Colors.red[500],
       ),
     );
   }

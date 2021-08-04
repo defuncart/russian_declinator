@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/enums/case.dart';
-// ignore: unused_import
 import 'package:russian_declinator/extensions/case_extensions.dart';
 import 'package:russian_declinator/extensions/noun_extensions.dart';
 import 'package:russian_declinator/generated/l10n.dart';
@@ -69,8 +68,6 @@ class GameService {
     _currentIndex = 0;
     _score = 0;
     _questionIndeces = List.generate(numberQuestions, (index) => index)..shuffle();
-
-    print(_questionIndeces);
   }
 
   bool answer(int index) {
@@ -110,48 +107,44 @@ class GameService {
       case GameType.adjectiveNoun:
         break;
     }
+
+    print('correctAnswerIndex: $_correctAnswerIndex');
   }
 
   void _determineNounRound() {
     final noun = _nouns![_questionIndeces[_currentIndex]];
     final isPlural = _random.nextBool();
     _currentQuestion = noun.accented;
-    final selectedCase = cases.randomElement;
-    final selectedDeclension = Case.values.indexOf(selectedCase) + (isPlural ? Case.values.length : 0);
-    _currentInfo = /*selectedCase.localized*/ describeEnum(selectedCase) +
+    final Case selectedCase = cases.randomElement;
+    _currentInfo = selectedCase.localized +
         ' ' +
         (isPlural ? AppLocalizations.current.generalPlural : AppLocalizations.current.generalSingular);
-    final declensions = noun.allDeclensions;
-    // print(declensions.length);
-    print('caseIndex: $selectedDeclension');
-    print('---');
+    var declensions = noun.allDeclensions;
+    var selectedDeclensionIndex = Case.values.indexOf(selectedCase) + (isPlural ? Case.values.length : 0);
+    final selectedDeclension = declensions[selectedDeclensionIndex];
+    declensions = declensions.toSet().toList();
+    selectedDeclensionIndex = declensions.indexOf(selectedDeclension);
+
     var answerIndeces = determineAnswerIndeces(
+      totalAnswers: 4,
       numberPossibleAnswers: declensions.length,
-      answerIndex: selectedDeclension,
+      answerIndex: selectedDeclensionIndex,
     );
-    _correctAnswerIndex = answerIndeces.indexOf(selectedDeclension);
+    _correctAnswerIndex = answerIndeces.indexOf(selectedDeclensionIndex);
     _currentAnswers = answerIndeces.map((index) => declensions[index]).toList();
   }
 
   @visibleForTesting
   List<int> determineAnswerIndeces({
+    required int totalAnswers,
     required int numberPossibleAnswers,
     required int answerIndex,
   }) {
-    var answerIndeces = List.generate(numberPossibleAnswers, (index) => index);
-    print(answerIndeces);
-    answerIndeces = answerIndeces..removeWhere((element) => element == answerIndex);
-    print(answerIndeces);
+    var answerIndeces = List.generate(numberPossibleAnswers, (index) => index)
+      ..removeWhere((element) => element == answerIndex)
+      ..shuffle();
+    answerIndeces = answerIndeces.take(totalAnswers - 1).toList()..add(answerIndex);
     answerIndeces.shuffle();
-    print(answerIndeces);
-    answerIndeces = answerIndeces.take(3).toList();
-    print(answerIndeces);
-    answerIndeces = answerIndeces..add(answerIndex);
-    answerIndeces.shuffle();
-    print(answerIndeces);
-    print('---');
-
-    //TODO deal with case of repeated
 
     return answerIndeces;
   }
