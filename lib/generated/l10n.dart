@@ -231,6 +231,26 @@ class AppLocalizations {
     );
   }
 
+  /// `Animate`
+  String get generalAnimate {
+    return Intl.message(
+      'Animate',
+      name: 'generalAnimate',
+      desc: 'When a noun is animate',
+      args: [],
+    );
+  }
+
+  /// `Not Animate`
+  String get generalNotAnimate {
+    return Intl.message(
+      'Not Animate',
+      name: 'generalNotAnimate',
+      desc: 'When a noun is not animate',
+      args: [],
+    );
+  }
+
   /// `Search`
   String get searchWordsHintText {
     return Intl.message(

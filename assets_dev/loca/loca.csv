@@ -17,6 +17,8 @@ generalPlural;Plural;Plural;;
 generalMasculine;Masculine;Masculine;;
 generalFeminine;Feminine;Feminine;;
 generalNeuter;Neuter;Neuter;;
+generalAnimate;When a noun is animate;Animate;;
+generalNotAnimate;When a noun is not animate;Not Animate;;
 searchWordsHintText;A hint text to display when searching for words;Search;Suchen;
 homeScreenBottomBarHomeLabel;A label for the home bottom nav item;Home;;
 homeScreenBottomBarSettingsLabel;A label for the settings bottom nav item;Settings;;

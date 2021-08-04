@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("Russian Declinator"),
         "generalAccusative": MessageLookupByLibrary.simpleMessage("Accusative"),
         "generalAccusativeShort": MessageLookupByLibrary.simpleMessage("Acc"),
+        "generalAnimate": MessageLookupByLibrary.simpleMessage("Animate"),
         "generalDative": MessageLookupByLibrary.simpleMessage("Dative"),
         "generalDativeShort": MessageLookupByLibrary.simpleMessage("Dat"),
         "generalFeminine": MessageLookupByLibrary.simpleMessage("Feminine"),
@@ -37,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "generalNeuter": MessageLookupByLibrary.simpleMessage("Neuter"),
         "generalNominative": MessageLookupByLibrary.simpleMessage("Nominative"),
         "generalNominativeShort": MessageLookupByLibrary.simpleMessage("Nom"),
+        "generalNotAnimate":
+            MessageLookupByLibrary.simpleMessage("Not Animate"),
         "generalPlural": MessageLookupByLibrary.simpleMessage("Plural"),
         "generalPrepositional":
             MessageLookupByLibrary.simpleMessage("Prepositional"),

@@ -1,30 +1,30 @@
 {
   "@@locale": "ru",
-  "appName": "[Яцццззииaaп Деэслиипaaтооя]",
+  "appName": "[Яцццззииaaп Дэеслиипaaтооя]",
   "@appName": {
     "description": "Name of the app"
   },
-  "generalNominative": "[Поомиипaaтиичёе]",
+  "generalNominative": "[Поомиипaaтиичеё]",
   "@generalNominative": {
     "description": "Nominative case"
   },
-  "generalGenitive": "[Гёэпиитиичээ]",
+  "generalGenitive": "[Гёепиитиичэё]",
   "@generalGenitive": {
     "description": "Genitive case"
   },
-  "generalDative": "[Дaaтиичёё]",
+  "generalDative": "[Дaaтиичэе]",
   "@generalDative": {
     "description": "Dative case"
   },
-  "generalAccusative": "[ААссццзaaтиичеэ]",
+  "generalAccusative": "[ААссццзaaтиичеё]",
   "@generalAccusative": {
     "description": "Accusative case"
   },
-  "generalInstrumental": "[ИИИпзтяццмеёптaaл]",
+  "generalInstrumental": "[ИИИпзтяццмеэптaaл]",
   "@generalInstrumental": {
     "description": "Instrumental case"
   },
-  "generalPrepositional": "[Ряёэроозиитииоопaaл]",
+  "generalPrepositional": "[Ряеероозиитииоопaaл]",
   "@generalPrepositional": {
     "description": "Prepositional case"
   },
@@ -32,7 +32,7 @@
   "@generalNominativeShort": {
     "description": "Nominative case short"
   },
-  "generalGenitiveShort": "[Гёээп]",
+  "generalGenitiveShort": "[Геээп]",
   "@generalGenitiveShort": {
     "description": "Genitive case short"
   },
@@ -48,7 +48,7 @@
   "@generalInstrumentalShort": {
     "description": "Instrumental case short"
   },
-  "generalPrepositionalShort": "[Ряэёер]",
+  "generalPrepositionalShort": "[Ряёеер]",
   "@generalPrepositionalShort": {
     "description": "Prepositional case short"
   },
@@ -60,31 +60,39 @@
   "@generalPlural": {
     "description": "Plural"
   },
-  "generalMasculine": "[Мaaaзсццлиипёэ]",
+  "generalMasculine": "[Мaaaзсццлиипёё]",
   "@generalMasculine": {
     "description": "Masculine"
   },
-  "generalFeminine": "[Феемиипиипее]",
+  "generalFeminine": "[Фэёмиипиипэё]",
   "@generalFeminine": {
     "description": "Feminine"
   },
-  "generalNeuter": "[Пееццтэея]",
+  "generalNeuter": "[Пёёццтёёя]",
   "@generalNeuter": {
     "description": "Neuter"
   },
-  "searchWordsHintText": "[Зеэеaaясн]",
+  "generalAnimate": "[ААпиимaaтеё]",
+  "@generalAnimate": {
+    "description": "When a noun is animate"
+  },
+  "generalNotAnimate": "[Поот ААпиимaaтээ]",
+  "@generalNotAnimate": {
+    "description": "When a noun is not animate"
+  },
+  "searchWordsHintText": "[Зееёaaясн]",
   "@searchWordsHintText": {
     "description": "A hint text to display when searching for words"
   },
-  "homeScreenBottomBarHomeLabel": "[Ноомэе]",
+  "homeScreenBottomBarHomeLabel": "[Ноомеэ]",
   "@homeScreenBottomBarHomeLabel": {
     "description": "A label for the home bottom nav item"
   },
-  "homeScreenBottomBarSettingsLabel": "[Зёёеёттиипгз]",
+  "homeScreenBottomBarSettingsLabel": "[Зёёёеттиипгз]",
   "@homeScreenBottomBarSettingsLabel": {
     "description": "A label for the settings bottom nav item"
   },
-  "settingsTabDarkModeLabel": "[Дaaaaяк Моодёэ]",
+  "settingsTabDarkModeLabel": "[Дaaaaяк Моодёе]",
   "@settingsTabDarkModeLabel": {
     "description": "A label for dark mode setting"
   },

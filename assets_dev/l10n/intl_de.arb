@@ -72,6 +72,14 @@
   "@generalNeuter": {
     "description": "Neuter"
   },
+  "generalAnimate": "Animate",
+  "@generalAnimate": {
+    "description": "When a noun is animate"
+  },
+  "generalNotAnimate": "Not Animate",
+  "@generalNotAnimate": {
+    "description": "When a noun is not animate"
+  },
   "searchWordsHintText": "Suchen",
   "@searchWordsHintText": {
     "description": "A hint text to display when searching for words"

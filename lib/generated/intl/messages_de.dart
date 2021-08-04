@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("[ÄÄccüüsaatiivee]"),
         "generalAccusativeShort":
             MessageLookupByLibrary.simpleMessage("[ÄÄÄcc]"),
+        "generalAnimate": MessageLookupByLibrary.simpleMessage("[ÄÄniimaatee]"),
         "generalDative": MessageLookupByLibrary.simpleMessage("[Daatiivee]"),
         "generalDativeShort": MessageLookupByLibrary.simpleMessage("[Daaat]"),
         "generalFeminine":
@@ -45,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("[Nöömiinaatiivee]"),
         "generalNominativeShort":
             MessageLookupByLibrary.simpleMessage("[Nöööm]"),
+        "generalNotAnimate":
+            MessageLookupByLibrary.simpleMessage("[Nööt ÄÄniimaatee]"),
         "generalPlural": MessageLookupByLibrary.simpleMessage("[Plüüüraal]"),
         "generalPrepositional":
             MessageLookupByLibrary.simpleMessage("[Preepöösiitiiöönaal]"),
