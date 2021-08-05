@@ -1,4 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:russian_declinator/enums/case.dart';
+import 'package:russian_declinator/enums/noun_form.dart';
 import 'package:russian_declinator/extensions/noun_extensions.dart';
 
 import '../test_utils/test_instances.dart';
@@ -70,6 +72,102 @@ void main() {
             'plInst',
             'plPrep',
           ],
+        );
+      });
+    });
+
+    group('declension', () {
+      final noun = TestInstances.noun();
+
+      test('${NounForm.singular} expect correct values', () {
+        expect(
+          noun.declension(
+            form: NounForm.singular,
+            declenionCase: Case.nominative,
+          ),
+          'sgNom',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.singular,
+            declenionCase: Case.genitive,
+          ),
+          'sgGen',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.singular,
+            declenionCase: Case.dative,
+          ),
+          'sgDat',
+        );
+
+        expect(
+          noun.declension(
+            form: NounForm.singular,
+            declenionCase: Case.accusative,
+          ),
+          'sgAcc',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.singular,
+            declenionCase: Case.instrumental,
+          ),
+          'sgInst',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.singular,
+            declenionCase: Case.prepositional,
+          ),
+          'sgPrep',
+        );
+      });
+
+      test('${NounForm.plural} expect correct values', () {
+        expect(
+          noun.declension(
+            form: NounForm.plural,
+            declenionCase: Case.nominative,
+          ),
+          'plNom',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.plural,
+            declenionCase: Case.genitive,
+          ),
+          'plGen',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.plural,
+            declenionCase: Case.dative,
+          ),
+          'plDat',
+        );
+
+        expect(
+          noun.declension(
+            form: NounForm.plural,
+            declenionCase: Case.accusative,
+          ),
+          'plAcc',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.plural,
+            declenionCase: Case.instrumental,
+          ),
+          'plInst',
+        );
+        expect(
+          noun.declension(
+            form: NounForm.plural,
+            declenionCase: Case.prepositional,
+          ),
+          'plPrep',
         );
       });
     });
