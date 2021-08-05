@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:russian_declinator/di_container.dart';
 import 'package:russian_declinator/enums/adjective_form.dart';
 import 'package:russian_declinator/enums/case.dart';
+import 'package:russian_declinator/extensions/adjective_extensions.dart';
 import 'package:russian_declinator/extensions/case_extensions.dart';
 import 'package:russian_declinator/services/databases/database.dart' show Adjective;
 import 'package:russian_declinator/widgets/common/word_with_stress.dart';
@@ -109,19 +110,4 @@ class AdjectiveColumn extends StatelessWidget {
             for (final v in f.split(',')) WordWithStress(v.trim()),
         ],
       );
-}
-
-extension AdjectiveExtensions on Adjective {
-  List<String> form(AdjectiveForm form) {
-    switch (form) {
-      case AdjectiveForm.masc:
-        return [mNom, mGen, mDat, mAcc, mInst, mPrep];
-      case AdjectiveForm.fem:
-        return [fNom, fGen, fDat, fAcc, fInst, fPrep];
-      case AdjectiveForm.neu:
-        return [nNom, nGen, nDat, nAcc, nInst, nPrep];
-      case AdjectiveForm.plural:
-        return [plNom, plGen, plDat, plAcc, plInst, plPrep];
-    }
-  }
 }

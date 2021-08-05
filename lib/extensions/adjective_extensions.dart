@@ -98,4 +98,17 @@ extension AdjectiveExtensions on Adjective {
         }
     }
   }
+
+  List<String> form(AdjectiveForm form) {
+    switch (form) {
+      case AdjectiveForm.masc:
+        return [mNom, mGen, mDat, mAcc, mInst, mPrep];
+      case AdjectiveForm.fem:
+        return [fNom, fGen, fDat, fAcc, fInst, fPrep];
+      case AdjectiveForm.neu:
+        return [nNom, nGen, nDat, nAcc, nInst, nPrep];
+      case AdjectiveForm.plural:
+        return [plNom, plGen, plDat, plAcc, plInst, plPrep];
+    }
+  }
 }

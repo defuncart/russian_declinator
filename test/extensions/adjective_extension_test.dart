@@ -261,5 +261,37 @@ void main() {
         );
       });
     });
+
+    group('form', () {
+      final adjective = TestInstances.adjective();
+
+      test('${AdjectiveForm.masc} ensure correct values', () {
+        expect(
+          adjective.form(AdjectiveForm.masc),
+          ['mNom', 'mGen', 'mDat', 'mAcc', 'mInst', 'mPrep'],
+        );
+      });
+
+      test('${AdjectiveForm.fem} ensure correct values', () {
+        expect(
+          adjective.form(AdjectiveForm.fem),
+          ['fNom', 'fGen', 'fDat', 'fAcc', 'fInst', 'fPrep'],
+        );
+      });
+
+      test('${AdjectiveForm.neu} ensure correct values', () {
+        expect(
+          adjective.form(AdjectiveForm.neu),
+          ['nNom', 'nGen', 'nDat', 'nAcc', 'nInst', 'nPrep'],
+        );
+      });
+
+      test('${AdjectiveForm.plural} ensure correct values', () {
+        expect(
+          adjective.form(AdjectiveForm.plural),
+          ['plNom', 'plGen', 'plDat', 'plAcc', 'plInst', 'plPrep'],
+        );
+      });
+    });
   });
 }
