@@ -208,7 +208,6 @@ class GameService {
     final noun = _nouns![_questionIndeces[_currentIndex]];
     final adjective = _adjectives![_questionIndeces[_currentIndex]];
 
-    // final AdjectiveForm adjectiveForm = AdjectiveForm.values.randomElement;
     AdjectiveForm adjectiveForm;
     do {
       adjectiveForm = AdjectiveForm.values.randomElement;
